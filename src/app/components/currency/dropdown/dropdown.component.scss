@@ -10,6 +10,9 @@
         border: 1px solid #E5E7EB;
         &[aria-expanded="true"] {
             border-color: #2563EB;
+            .mat-mdc-select-placeholder {
+                color:#2947F2;
+            }
             .mat-mdc-select-arrow-wrapper{
                 .mat-mdc-select-arrow{
                     background-image: url('../../../../assets/up-arrow.svg');
