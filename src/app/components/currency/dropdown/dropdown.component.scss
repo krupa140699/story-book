@@ -275,14 +275,6 @@
                         }
                     }
                 }
-
-                .error-msg {
-                    color: #FF0000;
-                    font-size: 12px;
-                    font-weight: 400;
-                    line-height: 16px;
-                    margin-top: 5px;
-                }
             }
 
             .currency-option-list {
@@ -380,8 +372,13 @@
                         }
                     }
 
-                    .error-msg {
-                        font-size: 10px;
+                    .error-wrap{
+                        margin: 10px 0 0;
+                        padding: 5px 20px;
+                        .error-title{
+                            font-size: 16px;
+                            line-height: 1.2;
+                        }
                     }
                 }
 
@@ -423,8 +420,18 @@
                         }
                     }
 
-                    .error-msg {
-                        font-size: 8px;
+                    .error-wrap{
+                        margin:8px 0 0;
+                        padding: 5px 10px;
+                        .error-title{
+                            font-size: 14px;
+                        }
+                        .desc{
+                            font-size: 12px;
+                            .clear-search{
+                                font-size: 12px;
+                            }
+                        }
                     }
                 }
 
