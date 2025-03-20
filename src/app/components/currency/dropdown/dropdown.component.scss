@@ -3,33 +3,40 @@
         width: 100%;
         max-width: 515px;
     }
+
     .currency-dropdown {
         display: flex;
         font-family: "Heebo", sans-serif !important;
         border-radius: 6px;
         border: 1px solid #E5E7EB;
+
         &[aria-expanded="true"] {
             border-color: #2563EB;
+
             .mat-mdc-select-placeholder {
-                color:#2947F2;
+                color: #2947F2;
             }
-            .mat-mdc-select-arrow-wrapper{
-                .mat-mdc-select-arrow{
+
+            .mat-mdc-select-arrow-wrapper {
+                .mat-mdc-select-arrow {
                     background-image: url('../../../../assets/up-arrow.svg');
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
             }
         }
-        &.mat-mdc-select-disabled{
+
+        &.mat-mdc-select-disabled {
             pointer-events: none;
             opacity: 0.5;
             filter: grayscale(1);
+            background-color: #F9FAFB;
         }
-        &:hover{
+
+        &:hover {
             border-color: #2563EB;
         }
-        
+
         .mat-mdc-select-trigger {
             padding: 13px 15px;
         }
@@ -52,8 +59,8 @@
 
                     .currency-image {
                         display: inline-block;
-                        width:28px;
-                        height:28px;
+                        width: 28px;
+                        height: 28px;
                         border-radius: 50%;
                     }
 
@@ -80,7 +87,7 @@
                     }
 
                     .currency-name {
-                        color: #959BA5;
+                        color: #01031C;
                         font-size: 12px;
                         font-style: normal;
                         font-weight: 700;
@@ -97,43 +104,52 @@
                 height: 24px;
                 background-repeat: no-repeat;
                 background-size: cover;
+
                 svg {
                     display: none;
                 }
             }
         }
+
         @media screen and (max-width:1024px) {
             .mat-mdc-select-trigger {
-                padding: 10px;
+                padding: 12px;
             }
+
             .mat-mdc-select-placeholder {
                 font-size: 14px;
                 line-height: 24px;
             }
+
             .mat-mdc-select-arrow-wrapper {
                 .mat-mdc-select-arrow {
                     width: 20px;
                     height: 20px;
                 }
             }
+
             mat-select-trigger {
                 .to-currency-section {
                     gap: 5px;
+
                     .image-wrap {
                         .currency-image {
-                            width:20px;
-                            height:20px;
+                            width: 20px;
+                            height: 20px;
                         }
+
                         .tick-icn {
                             width: 12px;
                             height: 12px;
                         }
                     }
+
                     .currency-info {
                         .currency-code {
                             font-size: 16px;
                             line-height: 20px;
                         }
+
                         .currency-name {
                             font-size: 10px;
                         }
@@ -141,38 +157,46 @@
                 }
             }
         }
+
         @media screen and (max-width:767px) {
             .mat-mdc-select-trigger {
-                padding: 8px;
+                padding: 10px;
             }
+
             .mat-mdc-select-placeholder {
                 font-size: 12px;
                 line-height: 20px;
             }
+
             .mat-mdc-select-arrow-wrapper {
                 .mat-mdc-select-arrow {
                     width: 16px;
                     height: 16px;
                 }
             }
+
             mat-select-trigger {
                 .to-currency-section {
-                    gap:5px;
+                    gap: 5px;
+
                     .image-wrap {
                         .currency-image {
-                            width:16px;
-                            height:16px;
+                            width: 16px;
+                            height: 16px;
                         }
+
                         .tick-icn {
                             width: 10px;
                             height: 10px;
                         }
                     }
+
                     .currency-info {
                         .currency-code {
                             font-size: 14px;
                             line-height: 16px;
                         }
+
                         .currency-name {
                             font-size: 8px;
                         }
@@ -188,6 +212,7 @@
             padding: 36px 22px 36px 36px;
             border-radius: 6px;
             box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+
             .search-input-wrapper {
                 display: flex;
                 flex-direction: column;
@@ -220,6 +245,37 @@
                     }
                 }
 
+                .error-wrap {
+                    margin: 14px 0 0;
+                    padding: 9px 29px;
+
+                    .error-title {
+                        color: #01031C;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 35px;
+                    }
+
+                    .desc {
+                        color: #585858;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: normal;
+
+                        .clear-search {
+                            background-color: transparent;
+                            color: #175CD3;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: normal;
+                            text-decoration-line: underline;
+                            border: none;
+                            cursor: pointer;
+                            padding: 0;
+                        }
+                    }
+                }
+
                 .error-msg {
                     color: #FF0000;
                     font-size: 12px;
@@ -228,11 +284,13 @@
                     margin-top: 5px;
                 }
             }
+
             .currency-option-list {
                 .mat-mdc-option {
                     padding: 0;
                     border-bottom: 1px dashed #D9DADD;
                     background-color: transparent !important;
+
                     .mdc-list-item__primary-text {
                         display: flex;
                         padding: 9px 29px;
@@ -269,6 +327,7 @@
                             }
                         }
                     }
+
                     &.mdc-list-item--selected {
                         .mdc-list-item__primary-text {
                             background: #F5F7FA;
@@ -280,21 +339,24 @@
                                 }
 
                                 .currency-name {
-                                    color: #6B7280;
+                                    color: #01031C;
                                     font-weight: 700;
                                 }
                             }
                         }
                     }
-                    &:hover{
+
+                    &:hover {
                         .mdc-list-item__primary-text {
                             background: #F5F7FA;
+
                             .currency-info {
                                 .currency-code {
                                     color: #2947F2;
                                 }
+
                                 .currency-name {
-                                    color: #6B7280;
+                                    color: #01031C;
                                 }
                             }
                         }
@@ -305,8 +367,10 @@
                     }
                 }
             }
+
             @media screen and (max-width:1024px) {
                 padding: 20px 10px 20px 20px;
+
                 .search-input-wrapper {
                     .input-inner {
                         input {
@@ -315,25 +379,30 @@
                             font-size: 12px;
                         }
                     }
+
                     .error-msg {
                         font-size: 10px;
                     }
                 }
+
                 .currency-option-list {
                     .mat-mdc-option {
                         .mdc-list-item__primary-text {
                             padding: 9px 20px;
                             gap: 10px;
                             margin: 10px 0;
+
                             .currency-image {
-                                width:20px;
-                                height:20px;
+                                width: 20px;
+                                height: 20px;
                             }
+
                             .currency-info {
                                 .currency-code {
                                     font-size: 16px;
                                     line-height: 20px;
                                 }
+
                                 .currency-name {
                                     font-size: 12px;
                                 }
@@ -342,46 +411,50 @@
                     }
                 }
             }
+
             @media screen and (max-width:767px) {
                 padding: 15px 10px 15px 15px;
+
                 .search-input-wrapper {
                     .input-inner {
                         input {
-                            height: 32px;
                             padding: 0px 10px 0px 10px;
                             font-size: 12px;
                         }
                     }
+
                     .error-msg {
                         font-size: 8px;
                     }
                 }
+
                 .currency-option-list {
                     .mat-mdc-option {
                         .mdc-list-item__primary-text {
                             padding: 9px 15px;
                             gap: 5px;
                             margin: 5px 0;
+
                             .currency-image {
-                                width:16px;
-                                height:16px;
+                                width: 16px;
+                                height: 16px;
                             }
+
                             .currency-info {
                                 .currency-code {
                                     font-size: 14px;
                                     line-height: 16px;
                                 }
+
                                 .currency-name {
                                     font-size: 10px;
                                 }
                             }
                         }
                     }
-                }            
+                }
             }
         }
     }
-    
+
 }
-
-

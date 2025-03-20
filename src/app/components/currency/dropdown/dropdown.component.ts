@@ -26,4 +26,7 @@ export class DropdownComponent {
       option.description.toLowerCase().includes(this.searchQuery.toLowerCase())
     );
   }
+  clearSearch(){
+    this.searchQuery = "";
+  }
 }

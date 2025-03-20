@@ -18,9 +18,10 @@
             [ngClass]="filteredOptions.length == 0 ? 'error-input' : ''" type="text"
             placeholder="Search" id="search-input">
         </div>
-        <span class="error-msg" *ngIf="filteredOptions?.length == 0">
-          Record not found!
-        </span>
+        <div class="error-wrap" *ngIf="filteredOptions?.length == 0">
+          <h3 class="error-title">No currency were found</h3>
+          <p class="desc">Try again with different keywords, <button (click)="clearSearch()" class="clear-search">Reset search</button></p>
+        </div>
       </div>
       <div class="currency-option-list">
         <mat-option *ngFor="let option of filteredOptions" [value]="option.value">
