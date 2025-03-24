@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -44,7 +45,9 @@
     "@storybook/blocks": "^8.6.4",
     "@storybook/test": "^8.6.4",
     "chromatic": "^11.27.0",
+    "css-loader": "^7.1.2",
     "storybook": "^8.6.4",
+    "style-loader": "^4.0.0",
     "typescript": "~5.7.2"
   }
 }

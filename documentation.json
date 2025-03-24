@@ -2,6 +2,61 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "MenuItem",
+            "id": "interface-MenuItem-43fd4c6f3583b518adcbea6bbf7401b63359e6f1822a0e499955d42a9c5dcaf3b0ca51f243f0a3f1305819f02a7a26df6ed4746e9375223673763dc63cbc4373",
+            "file": "src/app/risk-dashboard/components/sidebar/sidebar.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, ElementRef, ViewChild } from '@angular/core';\r\nimport { MatExpansionModule } from '@angular/material/expansion';\r\nexport interface MenuItem {\r\n  icon: string;\r\n  label: string;\r\n  badge?: string;\r\n  highlight?: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-sidebar',\r\n  imports: [MatExpansionModule],\r\n  templateUrl:'sidebar.component.html',\r\n  styleUrl: 'sidebar.component.scss'\r\n})\r\nexport class SidebarComponent {\r\n  @ViewChild('sidebar') sidebar!: ElementRef;\r\n  openSidebar() {\r\n    this.sidebar.nativeElement.classList.add('active');\r\n    document.body.classList.add('overflow-hidden');\r\n  }\r\n\r\n  hideSidebar() {\r\n    this.sidebar.nativeElement.classList.remove('active');\r\n    document.body.classList.remove('overflow-hidden');\r\n  }\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "badge",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "highlight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "User",
             "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
             "file": "src/stories/user.ts",
@@ -34,8 +89,46 @@
     "directives": [],
     "components": [
         {
+            "name": "AnnualExposureDetailsComponent",
+            "id": "component-AnnualExposureDetailsComponent-a47ba50aa270dfd04d68d41aacd493247b608646b0ea7bddfd122745dcc7500fe205fc524a26726d52d5e1bbf9ec3d7b6199788b404c9a8c1b8bf0665b145d7f",
+            "file": "src/app/risk-dashboard/components/dashboard/components/annual-exposure-details/annual-exposure-details.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-annual-exposure-details",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./annual-exposure-details.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-annual-exposure-details',\r\n  imports: [],\r\n  templateUrl: './annual-exposure-details.component.html',\r\n  styleUrl: './annual-exposure-details.component.scss'\r\n})\r\nexport class AnnualExposureDetailsComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./annual-exposure-details.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"annual-exposer-details\">\r\n    <h4 class=\"info-title\"><img src=\"images/exposure-virtual.svg\" alt=\"exposure\" />Annual exposure details</h4>\r\n    <div class=\"annual-wrap\">\r\n        <div class=\"annual-item exposer-item\">\r\n            <h4 class=\"item-title\">Annual exposure<img src=\"images/annual-title-help-icon.svg\" alt=\"help\" data-toggle=\"tooltip\" title=\"The total amount at risk over the specified time period, calculated as the sum of all monthly exposures.\"></h4>\r\n            <div class=\"price-sec\">\r\n                <span class=\"sign\">$</span>10,000,000\r\n                <!-- Static content used as a placeholder -->\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"hedge-item annual-item\">\r\n            <h4 class=\"item-title\">Our recommended hedge</h4>\r\n            <div class=\"price-sec\">\r\n                <span class=\"sign\">$</span>5,000,000\r\n                <span class=\"percent-tag\">50%</span>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"current-hedge-item annual-item\">\r\n            <h4 class=\"item-title\">Your current hedge</h4>\r\n            <div class=\"price-sec\">\r\n                <span class=\"sign\">$</span>3,000,000\r\n                <span class=\"percent-tag\">30%</span>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"avg-hedge-item annual-item\">\r\n            <h4 class=\"item-title\">AVG hedging rate<img src=\"images/annual-title-help-icon.svg\" alt=\"help\" data-toggle=\"tooltip\" title=\"The average exchange rate of your current hedging transactions\"></h4>\r\n            <div class=\"price-sec\">\r\n                1.25\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+        },
+        {
             "name": "AppComponent",
-            "id": "component-AppComponent-4b4a9df27d31118e642c0ad44ff11c4a8099aa93accc4202c7a2ab6c4b51c8b55339cd7076eb9f1ba7386b67fa2dec00c32e3b847af9d9a0d22627663a1c7b30",
+            "id": "component-AppComponent-4a205b95b0a6ce9ae9bf75b3248e81f23797b046a3e5cb8b43e3f6e8e5c0211df52617e1fcfb3abb098d4214549fe35e8a83859d444ad4034701646bc780c71f",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -45,13 +138,34 @@
             "selector": "app-root",
             "styleUrls": [],
             "styles": [],
-            "template": "<h1>Welcome to {{title}}!</h1>\n\n<router-outlet />\n",
-            "templateUrl": [],
+            "templateUrl": [
+                "app.component.html"
+            ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
+                {
+                    "name": "sidebar",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SidebarComponent",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "SidebarComponent"
+                        }
+                    ],
+                    "modifierKind": [
+                        170,
+                        123
+                    ]
+                },
                 {
                     "name": "title",
                     "defaultValue": "'angular-latest'",
@@ -64,7 +178,18 @@
                     "line": 15
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "openSidebar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -73,16 +198,68 @@
             "imports": [
                 {
                     "name": "RouterOutlet"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "SidebarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "DashboardComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [RouterOutlet],\r\n  template: `\r\n    <h1>Welcome to {{title}}!</h1>\r\n\r\n    <router-outlet />\r\n  `,\r\n  styles: [],\r\n})\r\nexport class AppComponent {\r\n  title = 'angular-latest';\r\n}\r\n",
+            "sourceCode": "import { Component, ViewChild } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { HeaderComponent } from \"./risk-dashboard/components/header/header.component\";\r\nimport { SidebarComponent } from \"./risk-dashboard/components/sidebar/sidebar.component\";\r\nimport { DashboardComponent } from \"./risk-dashboard/components/dashboard/dashboard.component\";\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [RouterOutlet, HeaderComponent, SidebarComponent, DashboardComponent],\r\n  templateUrl:'app.component.html',\r\n  styleUrl:'app.component.scss',\r\n})\r\nexport class AppComponent {\r\n  @ViewChild(SidebarComponent) private sidebar!: SidebarComponent;\r\n  title = 'angular-latest';\r\n  openSidebar() {\r\n    this.sidebar.openSidebar();\r\n  }\r\n}\r\n",
+            "styleUrl": "app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": []
+            "extends": [],
+            "templateData": "<div class=\"layout\">\r\n    <app-sidebar></app-sidebar>\r\n    <app-header (openSidebar)=\"openSidebar()\"></app-header>\r\n    <div class=\"content-wrapper risk-manager\">\r\n        <router-outlet />\r\n        <app-dashboard></app-dashboard>\r\n    </div>\r\n</div>"
+        },
+        {
+            "name": "BreadcrumbWalletComponent",
+            "id": "component-BreadcrumbWalletComponent-bed885fcd89ee7f5db98dd6ab4b7c6036b33e69c3a99ce63f29b1cb5c13fa455d2117e2eb497045a5d484f9bee0f1550357efad6c03cbd12cbf37cbb58014cd2",
+            "file": "src/app/risk-dashboard/components/dashboard/components/breadcrumb-wallet/breadcrumb-wallet.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-breadcrumb-wallet",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./breadcrumb-wallet.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-breadcrumb-wallet',\r\n  imports: [],\r\n  templateUrl: './breadcrumb-wallet.component.html',\r\n  styleUrl: './breadcrumb-wallet.component.scss'\r\n})\r\nexport class BreadcrumbWalletComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./breadcrumb-wallet.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"risk-header\">\r\n    <div class=\"risk-nav\">\r\n        Dashboard / hedging / <b>risk analysis</b>\r\n    </div>\r\n    <div class=\"risk-header-bottom\">\r\n        <div class=\"left-sec\">\r\n            <button class=\"cash-flow-wrap\" tooltip=\"S.L ROBOTICS\" placement=\"auto\" tooltipClass=\"risk-dash-tooltip--rm1\" container=\"body\">\r\n                <div class=\"currency-pair\">\r\n                    <img src=\"flags/us.svg\" class=\"from-currency\">\r\n                    <div class=\"base-currency-wrap\">\r\n                        <img src=\"images/ils-flag.svg\" class=\"base-currency\">\r\n                    </div>\r\n                </div>\r\n                <div class=\"cashflow-details\">\r\n                    <!-- Static content -->\r\n                    <h3 class=\"name\">S.L ROBOTICS</h3>\r\n                    <h5 class=\"month-range-text\">\r\n                        Jan 24 - Dec 24\r\n                    </h5>\r\n                </div>\r\n                <div class=\"selection-icons\">\r\n                    <!-- Add icons or leave it empty -->\r\n                </div>\r\n            </button>\r\n            <button class=\"add-flow\"><i class=\"fas fa-plus\"></i></button>\r\n        </div>\r\n        <div class=\"right-buttons\">\r\n            <!-- Static content for buttons -->\r\n            <button class=\"policy-btn\">\r\n                <img src=\"images/plus-icon-round.svg\"> Advanced Policy\r\n                <span class=\"notify-tag\"></span>\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -685,6 +862,53 @@
             "templateData": "<div class=\"card-list\">\r\n    <app-card\r\n      *ngFor=\"let card of cards; let i = index\"\r\n      [imageSrc]=\"card.imageSrc\"\r\n      [title]=\"card.title\"\r\n      [subtitle]=\"card.subtitle\"\r\n      [description]=\"card.description\"\r\n      [backgroundColor]=\"card.backgroundColor\"\r\n      [titleColor]=\"card.titleColor\"\r\n      [hoverColor]=\"card.hoverColor\"\r\n      [fullWidth]=\"card.fullWidth\"\r\n      [isLiked]=\"card.isLiked\"\r\n      [isSaved]=\"card.isSaved\"\r\n      (liked)=\"card.isLiked = !card.isLiked\"\r\n            (saved)=\"card.isSaved = !card.isSaved\"\r\n            (paid)=\"card.counter = $event\"\r\n    ></app-card>\r\n  </div>\r\n  "
         },
         {
+            "name": "DashboardComponent",
+            "id": "component-DashboardComponent-33d344e2266b10f92b18dd068236a86574fb6ef0c6a8424ec5176b0084831d6b26cd4f6657ebd6836e150c1b22d837c34c6f034edb1fad14af76a287e2c12a7e",
+            "file": "src/app/risk-dashboard/components/dashboard/dashboard.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dashboard",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./dashboard.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "AnnualExposureDetailsComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "BreadcrumbWalletComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { AnnualExposureDetailsComponent } from \"./components/annual-exposure-details/annual-exposure-details.component\";\r\nimport { BreadcrumbWalletComponent } from './components/breadcrumb-wallet/breadcrumb-wallet.component';\r\n\r\n@Component({\r\n  selector: 'app-dashboard',\r\n  imports: [AnnualExposureDetailsComponent, BreadcrumbWalletComponent],\r\n  templateUrl: './dashboard.component.html',\r\n  styleUrl: './dashboard.component.scss'\r\n})\r\nexport class DashboardComponent {\r\n\r\n}",
+            "styleUrl": "./dashboard.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"risk-dashboard\">\r\n    <app-breadcrumb-wallet></app-breadcrumb-wallet>\r\n    <div class=\"dashboard-sections\">\r\n        <div class=\"left\">\r\n            <app-annual-exposure-details></app-annual-exposure-details>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+        },
+        {
             "name": "DropdownComponent",
             "id": "component-DropdownComponent-a49c8a76331aa29bdd0e1d5eb201713216e81501154f81f638faeed564f575e5b663045d21038b67f020b0cfd3066570b117f1869d42f856aed738acee4f5a2d",
             "file": "src/app/components/currency/dropdown/dropdown.component.ts",
@@ -802,7 +1026,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "::ng-deep {\r\n    .currency-dropdown-container {\r\n        width: 100%;\r\n        max-width: 515px;\r\n    }\r\n\r\n    .currency-dropdown {\r\n        display: flex;\r\n        font-family: \"Heebo\", sans-serif !important;\r\n        border-radius: 6px;\r\n        border: 1px solid #E5E7EB;\r\n\r\n        &[aria-expanded=\"true\"] {\r\n            border-color: #2563EB;\r\n\r\n            .mat-mdc-select-placeholder {\r\n                color: #2947F2;\r\n            }\r\n\r\n            .mat-mdc-select-arrow-wrapper {\r\n                .mat-mdc-select-arrow {\r\n                    background-image: url('../../../../assets/up-arrow.svg');\r\n                    background-repeat: no-repeat;\r\n                    background-size: cover;\r\n                }\r\n            }\r\n        }\r\n\r\n        &.mat-mdc-select-disabled {\r\n            pointer-events: none;\r\n            opacity: 0.5;\r\n            filter: grayscale(1);\r\n            background-color: #F9FAFB;\r\n        }\r\n\r\n        &:hover {\r\n            border-color: #2563EB;\r\n        }\r\n\r\n        .mat-mdc-select-trigger {\r\n            padding: 13px 15px;\r\n        }\r\n\r\n        .mat-mdc-select-placeholder {\r\n            color: #9CA3AF;\r\n            font-size: 16px;\r\n            font-weight: 400;\r\n            line-height: 32px;\r\n        }\r\n\r\n        mat-select-trigger {\r\n            .to-currency-section {\r\n                display: flex;\r\n                align-items: center;\r\n                gap: 9px;\r\n\r\n                .image-wrap {\r\n                    position: relative;\r\n\r\n                    .currency-image {\r\n                        display: inline-block;\r\n                        width: 28px;\r\n                        height: 28px;\r\n                        border-radius: 50%;\r\n                    }\r\n\r\n                    .tick-icn {\r\n                        background-color: #fff;\r\n                        border-radius: 50%;\r\n                        position: absolute;\r\n                        bottom: 0;\r\n                        right: 0;\r\n                    }\r\n                }\r\n\r\n                .currency-info {\r\n                    display: flex;\r\n                    flex-direction: column;\r\n\r\n                    .currency-code {\r\n                        color: #2947F2;\r\n                        font-size: 18px;\r\n                        font-style: normal;\r\n                        font-weight: 700;\r\n                        line-height: 23px;\r\n                        margin: 0;\r\n                    }\r\n\r\n                    .currency-name {\r\n                        color: #01031C;\r\n                        font-size: 12px;\r\n                        font-style: normal;\r\n                        font-weight: 700;\r\n                        line-height: 1;\r\n                    }\r\n                }\r\n            }\r\n        }\r\n\r\n        .mat-mdc-select-arrow-wrapper {\r\n            .mat-mdc-select-arrow {\r\n                background-image: url('../../../../assets/down-arrow.svg');\r\n                width: 24px;\r\n                height: 24px;\r\n                background-repeat: no-repeat;\r\n                background-size: cover;\r\n\r\n                svg {\r\n                    display: none;\r\n                }\r\n            }\r\n        }\r\n\r\n        @media screen and (max-width:1024px) {\r\n            .mat-mdc-select-trigger {\r\n                padding: 12px;\r\n            }\r\n\r\n            .mat-mdc-select-placeholder {\r\n                font-size: 14px;\r\n                line-height: 24px;\r\n            }\r\n\r\n            .mat-mdc-select-arrow-wrapper {\r\n                .mat-mdc-select-arrow {\r\n                    width: 20px;\r\n                    height: 20px;\r\n                }\r\n            }\r\n\r\n            mat-select-trigger {\r\n                .to-currency-section {\r\n                    gap: 5px;\r\n\r\n                    .image-wrap {\r\n                        .currency-image {\r\n                            width: 20px;\r\n                            height: 20px;\r\n                        }\r\n\r\n                        .tick-icn {\r\n                            width: 12px;\r\n                            height: 12px;\r\n                        }\r\n                    }\r\n\r\n                    .currency-info {\r\n                        .currency-code {\r\n                            font-size: 16px;\r\n                            line-height: 20px;\r\n                        }\r\n\r\n                        .currency-name {\r\n                            font-size: 10px;\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n\r\n        @media screen and (max-width:767px) {\r\n            .mat-mdc-select-trigger {\r\n                padding: 10px;\r\n            }\r\n\r\n            .mat-mdc-select-placeholder {\r\n                font-size: 12px;\r\n                line-height: 20px;\r\n            }\r\n\r\n            .mat-mdc-select-arrow-wrapper {\r\n                .mat-mdc-select-arrow {\r\n                    width: 16px;\r\n                    height: 16px;\r\n                }\r\n            }\r\n\r\n            mat-select-trigger {\r\n                .to-currency-section {\r\n                    gap: 5px;\r\n\r\n                    .image-wrap {\r\n                        .currency-image {\r\n                            width: 16px;\r\n                            height: 16px;\r\n                        }\r\n\r\n                        .tick-icn {\r\n                            width: 10px;\r\n                            height: 10px;\r\n                        }\r\n                    }\r\n\r\n                    .currency-info {\r\n                        .currency-code {\r\n                            font-size: 14px;\r\n                            line-height: 16px;\r\n                        }\r\n\r\n                        .currency-name {\r\n                            font-size: 8px;\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    .mat-mdc-select-panel {\r\n        &.currency-dropdown-panel {\r\n            margin: 5px 0 0;\r\n            padding: 36px 22px 36px 36px;\r\n            border-radius: 6px;\r\n            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);\r\n\r\n            .search-input-wrapper {\r\n                display: flex;\r\n                flex-direction: column;\r\n\r\n                .input-inner {\r\n                    display: flex;\r\n\r\n                    input {\r\n                        width: 100%;\r\n                        border-radius: 7px;\r\n                        border: 1px solid #2947F2;\r\n                        background: #FFF;\r\n                        box-shadow: 0px 6px 44px 0px rgba(65, 90, 235, 0.11);\r\n                        display: flex;\r\n                        height: 44px;\r\n                        padding: 0px 10px 0px 20px;\r\n                        align-items: center;\r\n                        gap: 10px;\r\n                        color: #5B5B66;\r\n                        font-size: 14px;\r\n                        font-weight: 400;\r\n\r\n                        &::placeholder {\r\n                            color: #5B5B66;\r\n                        }\r\n\r\n                        &:focus-visible {\r\n                            outline: none;\r\n                        }\r\n                    }\r\n                }\r\n\r\n                .error-wrap {\r\n                    margin: 14px 0 0;\r\n                    padding: 9px 29px;\r\n\r\n                    .error-title {\r\n                        color: #01031C;\r\n                        font-size: 18px;\r\n                        font-weight: 400;\r\n                        line-height: 35px;\r\n                    }\r\n\r\n                    .desc {\r\n                        color: #585858;\r\n                        font-size: 14px;\r\n                        font-weight: 400;\r\n                        line-height: normal;\r\n\r\n                        .clear-search {\r\n                            background-color: transparent;\r\n                            color: #175CD3;\r\n                            font-size: 14px;\r\n                            font-weight: 400;\r\n                            line-height: normal;\r\n                            text-decoration-line: underline;\r\n                            border: none;\r\n                            cursor: pointer;\r\n                            padding: 0;\r\n                        }\r\n                    }\r\n                }\r\n\r\n                .error-msg {\r\n                    color: #FF0000;\r\n                    font-size: 12px;\r\n                    font-weight: 400;\r\n                    line-height: 16px;\r\n                    margin-top: 5px;\r\n                }\r\n            }\r\n\r\n            .currency-option-list {\r\n                .mat-mdc-option {\r\n                    padding: 0;\r\n                    border-bottom: 1px dashed #D9DADD;\r\n                    background-color: transparent !important;\r\n\r\n                    .mdc-list-item__primary-text {\r\n                        display: flex;\r\n                        padding: 9px 29px;\r\n                        border-radius: 10px;\r\n                        gap: 18px;\r\n                        margin: 19px 0;\r\n                        width: 100%;\r\n                        align-items: center;\r\n\r\n                        .currency-image {\r\n                            width: 32px;\r\n                            height: 32px;\r\n                            padding: 1px;\r\n                            border-radius: 50%;\r\n                        }\r\n\r\n                        .currency-info {\r\n                            display: flex;\r\n                            flex-direction: column;\r\n\r\n                            .currency-code {\r\n                                color: #01031C;\r\n                                font-size: 18px;\r\n                                font-weight: 400;\r\n                                line-height: 32px;\r\n                            }\r\n\r\n                            .currency-name {\r\n                                color: #01031C;\r\n                                font-size: 14px;\r\n                                font-weight: 400;\r\n                                opacity: 0.7;\r\n                                line-height: 1;\r\n                            }\r\n                        }\r\n                    }\r\n\r\n                    &.mdc-list-item--selected {\r\n                        .mdc-list-item__primary-text {\r\n                            background: #F5F7FA;\r\n\r\n                            .currency-info {\r\n                                .currency-code {\r\n                                    color: #2947F2;\r\n                                    font-weight: 700;\r\n                                }\r\n\r\n                                .currency-name {\r\n                                    color: #01031C;\r\n                                    font-weight: 700;\r\n                                }\r\n                            }\r\n                        }\r\n                    }\r\n\r\n                    &:hover {\r\n                        .mdc-list-item__primary-text {\r\n                            background: #F5F7FA;\r\n\r\n                            .currency-info {\r\n                                .currency-code {\r\n                                    color: #2947F2;\r\n                                }\r\n\r\n                                .currency-name {\r\n                                    color: #01031C;\r\n                                }\r\n                            }\r\n                        }\r\n                    }\r\n\r\n                    mat-pseudo-checkbox {\r\n                        display: none;\r\n                    }\r\n                }\r\n            }\r\n\r\n            @media screen and (max-width:1024px) {\r\n                padding: 20px 10px 20px 20px;\r\n\r\n                .search-input-wrapper {\r\n                    .input-inner {\r\n                        input {\r\n                            height: 36px;\r\n                            padding: 0px 10px 0px 15px;\r\n                            font-size: 12px;\r\n                        }\r\n                    }\r\n\r\n                    .error-msg {\r\n                        font-size: 10px;\r\n                    }\r\n                }\r\n\r\n                .currency-option-list {\r\n                    .mat-mdc-option {\r\n                        .mdc-list-item__primary-text {\r\n                            padding: 9px 20px;\r\n                            gap: 10px;\r\n                            margin: 10px 0;\r\n\r\n                            .currency-image {\r\n                                width: 20px;\r\n                                height: 20px;\r\n                            }\r\n\r\n                            .currency-info {\r\n                                .currency-code {\r\n                                    font-size: 16px;\r\n                                    line-height: 20px;\r\n                                }\r\n\r\n                                .currency-name {\r\n                                    font-size: 12px;\r\n                                }\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n\r\n            @media screen and (max-width:767px) {\r\n                padding: 15px 10px 15px 15px;\r\n\r\n                .search-input-wrapper {\r\n                    .input-inner {\r\n                        input {\r\n                            padding: 0px 10px 0px 10px;\r\n                            font-size: 12px;\r\n                        }\r\n                    }\r\n\r\n                    .error-msg {\r\n                        font-size: 8px;\r\n                    }\r\n                }\r\n\r\n                .currency-option-list {\r\n                    .mat-mdc-option {\r\n                        .mdc-list-item__primary-text {\r\n                            padding: 9px 15px;\r\n                            gap: 5px;\r\n                            margin: 5px 0;\r\n\r\n                            .currency-image {\r\n                                width: 16px;\r\n                                height: 16px;\r\n                            }\r\n\r\n                            .currency-info {\r\n                                .currency-code {\r\n                                    font-size: 14px;\r\n                                    line-height: 16px;\r\n                                }\r\n\r\n                                .currency-name {\r\n                                    font-size: 10px;\r\n                                }\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n}",
+                    "data": "::ng-deep {\r\n    .currency-dropdown-container {\r\n        width: 100%;\r\n        max-width: 515px;\r\n    }\r\n\r\n    .currency-dropdown {\r\n        display: flex;\r\n        font-family: \"Heebo\", sans-serif !important;\r\n        border-radius: 6px;\r\n        border: 1px solid #E5E7EB;\r\n\r\n        &[aria-expanded=\"true\"] {\r\n            border-color: #2563EB;\r\n\r\n            .mat-mdc-select-placeholder {\r\n                color: #2947F2;\r\n            }\r\n\r\n            .mat-mdc-select-arrow-wrapper {\r\n                .mat-mdc-select-arrow {\r\n                    background-image: url('../../../../assets/up-arrow.svg');\r\n                    background-repeat: no-repeat;\r\n                    background-size: cover;\r\n                }\r\n            }\r\n        }\r\n\r\n        &.mat-mdc-select-disabled {\r\n            pointer-events: none;\r\n            opacity: 0.5;\r\n            filter: grayscale(1);\r\n            background-color: #F9FAFB;\r\n        }\r\n\r\n        &:hover {\r\n            border-color: #2563EB;\r\n        }\r\n\r\n        .mat-mdc-select-trigger {\r\n            padding: 13px 15px;\r\n        }\r\n\r\n        .mat-mdc-select-placeholder {\r\n            color: #9CA3AF;\r\n            font-size: 16px;\r\n            font-weight: 400;\r\n            line-height: 32px;\r\n        }\r\n\r\n        mat-select-trigger {\r\n            .to-currency-section {\r\n                display: flex;\r\n                align-items: center;\r\n                gap: 9px;\r\n\r\n                .image-wrap {\r\n                    position: relative;\r\n\r\n                    .currency-image {\r\n                        display: inline-block;\r\n                        width: 28px;\r\n                        height: 28px;\r\n                        border-radius: 50%;\r\n                    }\r\n\r\n                    .tick-icn {\r\n                        background-color: #fff;\r\n                        border-radius: 50%;\r\n                        position: absolute;\r\n                        bottom: 0;\r\n                        right: 0;\r\n                    }\r\n                }\r\n\r\n                .currency-info {\r\n                    display: flex;\r\n                    flex-direction: column;\r\n\r\n                    .currency-code {\r\n                        color: #2947F2;\r\n                        font-size: 18px;\r\n                        font-style: normal;\r\n                        font-weight: 700;\r\n                        line-height: 23px;\r\n                        margin: 0;\r\n                    }\r\n\r\n                    .currency-name {\r\n                        color: #01031C;\r\n                        font-size: 12px;\r\n                        font-style: normal;\r\n                        font-weight: 700;\r\n                        line-height: 1;\r\n                    }\r\n                }\r\n            }\r\n        }\r\n\r\n        .mat-mdc-select-arrow-wrapper {\r\n            .mat-mdc-select-arrow {\r\n                background-image: url('../../../../assets/down-arrow.svg');\r\n                width: 24px;\r\n                height: 24px;\r\n                background-repeat: no-repeat;\r\n                background-size: cover;\r\n\r\n                svg {\r\n                    display: none;\r\n                }\r\n            }\r\n        }\r\n\r\n        @media screen and (max-width:1024px) {\r\n            .mat-mdc-select-trigger {\r\n                padding: 12px;\r\n            }\r\n\r\n            .mat-mdc-select-placeholder {\r\n                font-size: 14px;\r\n                line-height: 24px;\r\n            }\r\n\r\n            .mat-mdc-select-arrow-wrapper {\r\n                .mat-mdc-select-arrow {\r\n                    width: 20px;\r\n                    height: 20px;\r\n                }\r\n            }\r\n\r\n            mat-select-trigger {\r\n                .to-currency-section {\r\n                    gap: 5px;\r\n\r\n                    .image-wrap {\r\n                        .currency-image {\r\n                            width: 20px;\r\n                            height: 20px;\r\n                        }\r\n\r\n                        .tick-icn {\r\n                            width: 12px;\r\n                            height: 12px;\r\n                        }\r\n                    }\r\n\r\n                    .currency-info {\r\n                        .currency-code {\r\n                            font-size: 16px;\r\n                            line-height: 20px;\r\n                        }\r\n\r\n                        .currency-name {\r\n                            font-size: 10px;\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n\r\n        @media screen and (max-width:767px) {\r\n            .mat-mdc-select-trigger {\r\n                padding: 10px;\r\n            }\r\n\r\n            .mat-mdc-select-placeholder {\r\n                font-size: 12px;\r\n                line-height: 20px;\r\n            }\r\n\r\n            .mat-mdc-select-arrow-wrapper {\r\n                .mat-mdc-select-arrow {\r\n                    width: 16px;\r\n                    height: 16px;\r\n                }\r\n            }\r\n\r\n            mat-select-trigger {\r\n                .to-currency-section {\r\n                    gap: 5px;\r\n\r\n                    .image-wrap {\r\n                        .currency-image {\r\n                            width: 16px;\r\n                            height: 16px;\r\n                        }\r\n\r\n                        .tick-icn {\r\n                            width: 10px;\r\n                            height: 10px;\r\n                        }\r\n                    }\r\n\r\n                    .currency-info {\r\n                        .currency-code {\r\n                            font-size: 14px;\r\n                            line-height: 16px;\r\n                        }\r\n\r\n                        .currency-name {\r\n                            font-size: 8px;\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    .mat-mdc-select-panel {\r\n        &.currency-dropdown-panel {\r\n            margin: 5px 0 0;\r\n            padding: 36px 22px 36px 36px;\r\n            border-radius: 6px;\r\n            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);\r\n\r\n            .search-input-wrapper {\r\n                display: flex;\r\n                flex-direction: column;\r\n\r\n                .input-inner {\r\n                    display: flex;\r\n\r\n                    input {\r\n                        width: 100%;\r\n                        border-radius: 7px;\r\n                        border: 1px solid #2947F2;\r\n                        background: #FFF;\r\n                        box-shadow: 0px 6px 44px 0px rgba(65, 90, 235, 0.11);\r\n                        display: flex;\r\n                        height: 44px;\r\n                        padding: 0px 10px 0px 20px;\r\n                        align-items: center;\r\n                        gap: 10px;\r\n                        color: #5B5B66;\r\n                        font-size: 14px;\r\n                        font-weight: 400;\r\n\r\n                        &::placeholder {\r\n                            color: #5B5B66;\r\n                        }\r\n\r\n                        &:focus-visible {\r\n                            outline: none;\r\n                        }\r\n                    }\r\n                }\r\n\r\n                .error-wrap {\r\n                    margin: 14px 0 0;\r\n                    padding: 9px 29px;\r\n\r\n                    .error-title {\r\n                        color: #01031C;\r\n                        font-size: 18px;\r\n                        font-weight: 400;\r\n                        line-height: 35px;\r\n                    }\r\n\r\n                    .desc {\r\n                        color: #585858;\r\n                        font-size: 14px;\r\n                        font-weight: 400;\r\n                        line-height: normal;\r\n\r\n                        .clear-search {\r\n                            background-color: transparent;\r\n                            color: #175CD3;\r\n                            font-size: 14px;\r\n                            font-weight: 400;\r\n                            line-height: normal;\r\n                            text-decoration-line: underline;\r\n                            border: none;\r\n                            cursor: pointer;\r\n                            padding: 0;\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n\r\n            .currency-option-list {\r\n                .mat-mdc-option {\r\n                    padding: 0;\r\n                    border-bottom: 1px dashed #D9DADD;\r\n                    background-color: transparent !important;\r\n\r\n                    .mdc-list-item__primary-text {\r\n                        display: flex;\r\n                        padding: 9px 29px;\r\n                        border-radius: 10px;\r\n                        gap: 18px;\r\n                        margin: 19px 0;\r\n                        width: 100%;\r\n                        align-items: center;\r\n\r\n                        .currency-image {\r\n                            width: 32px;\r\n                            height: 32px;\r\n                            padding: 1px;\r\n                            border-radius: 50%;\r\n                        }\r\n\r\n                        .currency-info {\r\n                            display: flex;\r\n                            flex-direction: column;\r\n\r\n                            .currency-code {\r\n                                color: #01031C;\r\n                                font-size: 18px;\r\n                                font-weight: 400;\r\n                                line-height: 32px;\r\n                            }\r\n\r\n                            .currency-name {\r\n                                color: #01031C;\r\n                                font-size: 14px;\r\n                                font-weight: 400;\r\n                                opacity: 0.7;\r\n                                line-height: 1;\r\n                            }\r\n                        }\r\n                    }\r\n\r\n                    &.mdc-list-item--selected {\r\n                        .mdc-list-item__primary-text {\r\n                            background: #F5F7FA;\r\n\r\n                            .currency-info {\r\n                                .currency-code {\r\n                                    color: #2947F2;\r\n                                    font-weight: 700;\r\n                                }\r\n\r\n                                .currency-name {\r\n                                    color: #01031C;\r\n                                    font-weight: 700;\r\n                                }\r\n                            }\r\n                        }\r\n                    }\r\n\r\n                    &:hover {\r\n                        .mdc-list-item__primary-text {\r\n                            background: #F5F7FA;\r\n\r\n                            .currency-info {\r\n                                .currency-code {\r\n                                    color: #2947F2;\r\n                                }\r\n\r\n                                .currency-name {\r\n                                    color: #01031C;\r\n                                }\r\n                            }\r\n                        }\r\n                    }\r\n\r\n                    mat-pseudo-checkbox {\r\n                        display: none;\r\n                    }\r\n                }\r\n            }\r\n\r\n            @media screen and (max-width:1024px) {\r\n                padding: 20px 10px 20px 20px;\r\n\r\n                .search-input-wrapper {\r\n                    .input-inner {\r\n                        input {\r\n                            height: 36px;\r\n                            padding: 0px 10px 0px 15px;\r\n                            font-size: 12px;\r\n                        }\r\n                    }\r\n\r\n                    .error-wrap{\r\n                        margin: 10px 0 0;\r\n                        padding: 5px 20px;\r\n                        .error-title{\r\n                            font-size: 16px;\r\n                            line-height: 1.2;\r\n                        }\r\n                    }\r\n                }\r\n\r\n                .currency-option-list {\r\n                    .mat-mdc-option {\r\n                        .mdc-list-item__primary-text {\r\n                            padding: 9px 20px;\r\n                            gap: 10px;\r\n                            margin: 10px 0;\r\n\r\n                            .currency-image {\r\n                                width: 20px;\r\n                                height: 20px;\r\n                            }\r\n\r\n                            .currency-info {\r\n                                .currency-code {\r\n                                    font-size: 16px;\r\n                                    line-height: 20px;\r\n                                }\r\n\r\n                                .currency-name {\r\n                                    font-size: 12px;\r\n                                }\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n\r\n            @media screen and (max-width:767px) {\r\n                padding: 15px 10px 15px 15px;\r\n\r\n                .search-input-wrapper {\r\n                    .input-inner {\r\n                        input {\r\n                            padding: 0px 10px 0px 10px;\r\n                            font-size: 12px;\r\n                        }\r\n                    }\r\n\r\n                    .error-wrap{\r\n                        margin:8px 0 0;\r\n                        padding: 5px 10px;\r\n                        .error-title{\r\n                            font-size: 14px;\r\n                        }\r\n                        .desc{\r\n                            font-size: 12px;\r\n                            .clear-search{\r\n                                font-size: 12px;\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n\r\n                .currency-option-list {\r\n                    .mat-mdc-option {\r\n                        .mdc-list-item__primary-text {\r\n                            padding: 9px 15px;\r\n                            gap: 5px;\r\n                            margin: 5px 0;\r\n\r\n                            .currency-image {\r\n                                width: 16px;\r\n                                height: 16px;\r\n                            }\r\n\r\n                            .currency-info {\r\n                                .currency-code {\r\n                                    font-size: 14px;\r\n                                    line-height: 16px;\r\n                                }\r\n\r\n                                .currency-name {\r\n                                    font-size: 10px;\r\n                                }\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n}",
                     "styleUrl": "./dropdown.component.scss"
                 }
             ],
@@ -908,6 +1132,76 @@
             "extends": []
         },
         {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-b1c539bbfab39667b474102707b2e96e836ec7fd277786cf082e7bac2d96e8ab1bb97577320d7380aaebd31724ae92b488f730a033025f5a03a03f66230138b4-1",
+            "file": "src/app/risk-dashboard/components/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "openSidebar",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "openMenu",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MatIconModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatMenuModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Output } from '@angular/core';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatMenuModule } from '@angular/material/menu';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  standalone: true,\r\n  imports: [MatIconModule,MatMenuModule],\r\n  templateUrl: './header.component.html',\r\n  styleUrl: './header.component.scss'\r\n})\r\nexport class HeaderComponent {\r\n  @Output() openSidebar = new EventEmitter();\r\n  openMenu() {\r\n    this.openSidebar.emit();\r\n  }\r\n}\r\n",
+            "styleUrl": "./header.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "HeaderComponent-1",
+            "templateData": "<header>\r\n    <div class=\"topheder-business-users\">\r\n        <div class=\"header-inner\">\r\n            <button class=\"navbar-toggler\" type=\"button\" (click)=\"openMenu()\" id=\"db-header-8\">\r\n                <img src=\"images/side-menu.svg\">\r\n            </button>\r\n        </div>\r\n        <nav class=\"navbar main-nav\">\r\n            <div class=\"nav-inner\">\r\n                <div class=\"nav-left\">\r\n                    <div class=\"wallet-list-business\">\r\n                        <div class=\"flag\">\r\n                            <img src=\"images/ils-flag.svg\" alt=\"flag\">\r\n                        </div>\r\n                        <div class=\"currency-wrapper\">\r\n                            <div class=\"wallet-ammount\">\r\n                                3,200,000<span class=\"sub-part\">.00</span>\r\n                            </div>\r\n                            <button class=\"wallet-list-button\" mat-icon-button></button>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"nav-option-right\">\r\n                    <div class=\"lang-wrapper\">\r\n                        <button type=\"button\" class=\"drop-down-btn lang-btn\" [matMenuTriggerFor]=\"langMenu\"\r\n                            id=\"dropdownForm2\">\r\n                            <img height=\"20px\" width=\"20px\" src=\"images/gloabe-icn.svg\" alt=\"language icon\">\r\n                        </button>\r\n                        <mat-menu #langMenu=\"matMenu\"\r\n                            class=\"header-menu-panel side-nav-wrapper language-wrapper animated fadeIn py-2 px-2\">\r\n                            <ul>\r\n                                <li>\r\n                                    <button class=\"drop-down-btn\" id=\"lang-list-1\">English</button>\r\n                                </li>\r\n                                <li>\r\n                                    <button class=\"drop-down-btn\" id=\"lang-list-2\">עברית</button>\r\n                                </li>\r\n                            </ul>\r\n                        </mat-menu>\r\n                    </div>\r\n                    <button class=\"header-btn download-app\">\r\n                        Download App\r\n                    </button>\r\n                    <a class=\"header-btn market-place\">\r\n                        <svg width=\"22\" height=\"20\" viewBox=\"0 0 22 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                            <path id=\"Vector\"\r\n                                d=\"M21.9483 6.58348C21.9248 6.53253 21.8963 6.48416 21.8632 6.43913C21.8382 6.31428 21.8046 6.19137 21.7628 6.0713C21.7577 6.05739 21.7526 6.04348 21.7458 6.02956L19.4031 0.521739C19.3369 0.366601 19.2277 0.234598 19.0891 0.141919C18.9505 0.049241 18.7884 -8.19612e-05 18.6228 1.02236e-07H3.30575C3.14011 -8.19612e-05 2.97804 0.049241 2.83943 0.141919C2.70082 0.234598 2.59169 0.366601 2.52543 0.521739L0.168309 6.07043C-0.056103 6.65243 -0.056103 7.29975 0.168309 7.88174C0.385115 8.3882 0.699203 8.84504 1.09196 9.22518C1.48472 9.60532 1.94815 9.90103 2.4548 10.0948V19.1304C2.4548 19.3611 2.54446 19.5822 2.70404 19.7453C2.86362 19.9084 3.08007 20 3.30575 20H18.6228C18.8485 20 19.0649 19.9084 19.2245 19.7453C19.3841 19.5822 19.4737 19.3611 19.4737 19.1304V10.0948C19.9803 9.90127 20.4436 9.60585 20.8364 9.22601C21.2291 8.84617 21.5433 8.38965 21.7602 7.88348C21.8304 7.70055 21.877 7.5091 21.8989 7.31391C21.9557 7.20211 21.9894 7.07959 21.9979 6.95393C22.0064 6.82828 21.9895 6.70219 21.9483 6.58348ZM8.41143 18.2609V13.0435H10.1133V18.2609H8.41143ZM11.8152 18.2609V13.0435H13.5171V18.2609H11.8152ZM17.7718 18.2609H15.219V12.1739C15.219 11.9433 15.1294 11.7221 14.9698 11.559C14.8102 11.396 14.5937 11.3043 14.3681 11.3043H7.56048C7.3348 11.3043 7.11836 11.396 6.95877 11.559C6.79919 11.7221 6.70954 11.9433 6.70954 12.1739V18.2609H4.1567V10.4348C4.80138 10.443 5.44005 10.3072 6.028 10.0369C6.61595 9.7665 7.13898 9.36811 7.56048 8.86957C7.9868 9.36234 8.51071 9.75693 9.09752 10.0272C9.68432 10.2974 10.3206 10.4372 10.9643 10.4372C11.6079 10.4372 12.2442 10.2974 12.831 10.0272C13.4178 9.75693 13.9417 9.36234 14.3681 8.86957C14.7896 9.36811 15.3126 9.7665 15.9005 10.0369C16.4885 10.3072 17.1272 10.443 17.7718 10.4348V18.2609ZM20.186 7.21739C19.9683 7.67738 19.6239 8.06235 19.195 8.32498C18.7661 8.5876 18.2714 8.71644 17.7718 8.69565C17.1525 8.74712 16.5381 8.54822 16.0608 8.14172C15.5834 7.73521 15.2812 7.15354 15.219 6.52174C15.219 6.29112 15.1294 6.06994 14.9698 5.90686C14.8102 5.74379 14.5937 5.65217 14.3681 5.65217C14.1424 5.65217 13.9259 5.74379 13.7663 5.90686C13.6068 6.06994 13.5171 6.29112 13.5171 6.52174C13.455 7.15354 13.1527 7.73521 12.6754 8.14172C12.198 8.54822 11.5836 8.74712 10.9643 8.69565C10.3449 8.74712 9.73054 8.54822 9.25318 8.14172C8.77581 7.73521 8.47358 7.15354 8.41143 6.52174C8.41143 6.29112 8.32178 6.06994 8.1622 5.90686C8.00261 5.74379 7.78617 5.65217 7.56048 5.65217C7.3348 5.65217 7.11836 5.74379 6.95877 5.90686C6.79919 6.06994 6.70954 6.29112 6.70954 6.52174C6.64739 7.15354 6.34516 7.73521 5.86779 8.14172C5.39043 8.54822 4.77604 8.74712 4.1567 8.69565C3.65699 8.7165 3.1622 8.5877 2.73316 8.32507C2.30412 8.06245 1.95952 7.67745 1.74171 7.21739C1.68468 7.05701 1.68468 6.88125 1.74171 6.72087L3.86397 1.73913H18.0646L20.1724 6.69565C20.2382 6.86222 20.2431 7.04747 20.186 7.21739Z\"\r\n                                fill=\"black\" />\r\n                        </svg>\r\n                        Marketplace\r\n                    </a>\r\n                    <button class=\"add-money\" mat-button id=\"db-header-10\">+ Add Money</button>\r\n                    <div class=\"user-profile\">\r\n                        <button class=\"profile-btn\" [matMenuTriggerFor]=\"accountsMenu\" id=\"db-header-11\">T</button>\r\n                        <button class=\"user-option\" mat-icon-button [matMenuTriggerFor]=\"profileMenu\" id=\"db-header-12\">\r\n                            <img src=\"images/menu-down-arrow.svg\">\r\n                        </button>\r\n                        <mat-menu #profileMenu=\"matMenu\" class=\"header-menu-panel\">\r\n                            <button mat-menu-item class=\"custom-menu-item\" id=\"db-header-13\">Logout</button>\r\n                        </mat-menu>\r\n                        <mat-menu #accountsMenu=\"matMenu\" class=\"header-menu-panel\">\r\n                            <button mat-menu-item class=\"custom-menu-item\" id=\"dbheader-company\">Tamir</button>\r\n                        </mat-menu>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </nav>\r\n    </div>\r\n</header>"
+        },
+        {
             "name": "PageComponent",
             "id": "component-PageComponent-21dd6eb370b4983b5c21c84d40e6f54d266a9d9af9889e6e76b35c43058bd53b3e451bad089d5adf4bea46647ba10265a2fa8cb15630398e75636307d4817fc6",
             "file": "src/stories/page.component.ts",
@@ -1000,6 +1294,90 @@
             ],
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "SidebarComponent",
+            "id": "component-SidebarComponent-43fd4c6f3583b518adcbea6bbf7401b63359e6f1822a0e499955d42a9c5dcaf3b0ca51f243f0a3f1305819f02a7a26df6ed4746e9375223673763dc63cbc4373",
+            "file": "src/app/risk-dashboard/components/sidebar/sidebar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sidebar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "sidebar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "sidebar",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'sidebar'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "hideSidebar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "openSidebar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "MatExpansionModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ElementRef, ViewChild } from '@angular/core';\r\nimport { MatExpansionModule } from '@angular/material/expansion';\r\nexport interface MenuItem {\r\n  icon: string;\r\n  label: string;\r\n  badge?: string;\r\n  highlight?: boolean;\r\n}\r\n\r\n@Component({\r\n  selector: 'app-sidebar',\r\n  imports: [MatExpansionModule],\r\n  templateUrl:'sidebar.component.html',\r\n  styleUrl: 'sidebar.component.scss'\r\n})\r\nexport class SidebarComponent {\r\n  @ViewChild('sidebar') sidebar!: ElementRef;\r\n  openSidebar() {\r\n    this.sidebar.nativeElement.classList.add('active');\r\n    document.body.classList.add('overflow-hidden');\r\n  }\r\n\r\n  hideSidebar() {\r\n    this.sidebar.nativeElement.classList.remove('active');\r\n    document.body.classList.remove('overflow-hidden');\r\n  }\r\n}\r\n",
+            "styleUrl": "sidebar.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"sidebar-background\" #sidebar>\r\n  <div class=\"sidebar\">\r\n    <!-- Logo -->\r\n    <div class=\"close-btn\">\r\n      <button class=\"men-close-btn\" (click)=\"hideSidebar()\">\r\n        <img src=\"images/close-icon.svg\" class=\"close-icn\" alt=\"close\">\r\n      </button>\r\n    </div>\r\n    <div class=\"side-bar-wrapper\">\r\n      <div class=\"logo\">\r\n        <img src=\"images/okoora-logo.svg\" class=\"main-logo\" alt=\"Logo\" />\r\n        <img src=\"images/logo-abcm-small.svg\" class=\"small-logo\" alt=\"Logo\" />\r\n      </div>\r\n      <div class=\"menu-list\">\r\n        <div class=\"first-divider\"></div>\r\n        <!-- Navigation -->\r\n        <a class=\"menu-item\"><i class=\"icon-dashboard\"></i> <span class=\"menu-text\">Dashboard</span></a>\r\n        <a class=\"menu-item\"><i class=\"icon-payments\"></i> <span class=\"menu-text\">Payments</span></a>\r\n        <a class=\"menu-item\"><i class=\"icon-funds\"></i> <span class=\"menu-text\">Received Funds</span></a>\r\n        <a class=\"menu-item\"><i class=\"icon-purchases\"></i> <span class=\"menu-text\">Purchases</span></a>\r\n        <a class=\"menu-item active\">\r\n          <i class=\"icon-risk\"></i> <span class=\"menu-text\">Risk Manager</span> <span class=\"new-badge\">New</span>\r\n        </a>\r\n        <div class=\"second-divider\"></div>\r\n        <mat-accordion id=\"navReports\">\r\n          <mat-expansion-panel class=\"shadow-none mb-3 reports-expansion-panel\">\r\n            <mat-expansion-panel-header id=\"navReportsExpansion\" class=\"header-reports\">\r\n              <mat-panel-title class=\"panel-item\">\r\n                <i class=\"icon-reports\"></i> <span class=\"menu-text\">Reports</span>\r\n              </mat-panel-title>\r\n            </mat-expansion-panel-header>\r\n            <mat-panel-description class=\"sub-tabs-reports\">\r\n              <a id=\"all-transactions-link\">\r\n                <p class=\"submenu-name\">All transactions</p>\r\n              </a>\r\n              <a id=\"smartConvert-link\">\r\n                <p class=\"submenu-name\">Period end balance</p>\r\n              </a>\r\n              <hr class=\"bottom-line\">\r\n            </mat-panel-description>\r\n          </mat-expansion-panel>\r\n        </mat-accordion>\r\n        <a class=\"menu-item\"><i class=\"icon-alerts\"></i> <span class=\"menu-text\">Alerts</span></a>\r\n        <a class=\"menu-item\"><i class=\"icon-contacts\"></i> <span class=\"menu-text\">Contacts</span></a>\r\n        <a class=\"menu-item\"><i class=\"icon-help\"></i> <span class=\"menu-text\">Help</span></a>\r\n        <a class=\"menu-item marketplace\">\r\n          <i class=\"market-place\"></i> <span class=\"menu-text\">Marketplace</span>\r\n        </a>\r\n        <button id=\"downloadApp\" class=\"download-app\">\r\n          Download App\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
         },
         {
             "name": "TagComponent",
@@ -1164,7 +1542,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 13,
+        "count": 8,
         "status": "low",
         "files": [
             {
@@ -1173,7 +1551,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -1220,6 +1598,60 @@
                 "name": "DropdownComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/risk-dashboard/components/dashboard/components/annual-exposure-details/annual-exposure-details.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AnnualExposureDetailsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/risk-dashboard/components/dashboard/components/breadcrumb-wallet/breadcrumb-wallet.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BreadcrumbWalletComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/risk-dashboard/components/dashboard/dashboard.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DashboardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/risk-dashboard/components/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/risk-dashboard/components/sidebar/sidebar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SidebarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/risk-dashboard/components/sidebar/sidebar.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MenuItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
