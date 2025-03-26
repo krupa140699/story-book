@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from "@storybook/angular";
-import { ChartComponent } from "ng-apexcharts";
+import { ChartsTabsComponent } from "./charts-tabs.component";
 
-const meta: Meta<ChartComponent> = {
+const meta: Meta<ChartsTabsComponent> = {
     title: 'Components/Risk-Manager/Chart-tabs',
-    component: ChartComponent,
+    component: ChartsTabsComponent,
 };
 export default meta;
-type Story = StoryObj<ChartComponent>;
+type Story = StoryObj<ChartsTabsComponent>;
 
 export const Default: Story = {};
