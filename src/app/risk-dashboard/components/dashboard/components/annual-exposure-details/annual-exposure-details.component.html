@@ -5,7 +5,7 @@
             <h4 class="item-title">Annual exposure<img src="images/annual-title-help-icon.svg" alt="help" [ngbTooltip]="annualExposer" placement="top-left"
                 tooltipClass="risk-step3-tooltip--rm"></h4>
             <div class="price-sec">
-                <span class="sign">$</span>1,200,001<span>.2</span>
+                <span class="sign">$</span>{{annualExposure}}
                 <!-- Static content used as a placeholder -->
             </div>
         </div>
@@ -20,23 +20,23 @@
         <div class="hedge-item annual-item">
             <h4 class="item-title">Our recommended hedge</h4>
             <div class="price-sec">
-                <span class="sign">$</span>720,001
-                <span class="percent-tag">60%</span>
+                <span class="sign">$</span>{{recommendedHedge}}
+                <span class="percent-tag">{{recommendedHedgePercent}}%</span>
             </div>
         </div>
 
         <div class="current-hedge-item annual-item">
             <h4 class="item-title">Your current hedge</h4>
             <div class="price-sec">
-                <span class="sign">$</span>0
-                <span class="percent-tag">0%</span>
+                <span class="sign">$</span>{{currentHedge}}
+                <span class="percent-tag">{{currentHedgePercent}}%</span>
             </div>
         </div>
 
         <div class="avg-hedge-item annual-item">
             <h4 class="item-title">AVG hedging rate<img src="images/annual-title-help-icon.svg" alt="help" [ngbTooltip]="avgHedge" placement="top-right" tooltipClass="risk-step3-tooltip--rm"></h4>
             <div class="price-sec">
-                --
+                {{avgHedgeRate}}
             </div>
         </div>
     </div>

@@ -6,16 +6,16 @@
         <div class="left-sec">
             <button class="cash-flow-wrap" tooltip="S.L ROBOTICS" placement="auto" tooltipClass="risk-dash-tooltip--rm1" container="body">
                 <div class="currency-pair">
-                    <img src="flags/us.svg" class="from-currency">
+                    <img [src]="fromCurrency" class="from-currency">
                     <div class="base-currency-wrap">
-                        <img src="images/ils-flag.svg" class="base-currency">
+                        <img [src]="baseCurrency" class="base-currency">
                     </div>
                 </div>
                 <div class="cashflow-details">
                     <!-- Static content -->
-                    <h3 class="name">S.L ROBOTICS</h3>
+                    <h3 class="name">{{cashFlowName}}</h3>
                     <h5 class="month-range-text">
-                        Jan 24 - Dec 24
+                        {{monthRange}}
                     </h5>
                 </div>
                 <div class="selection-icons">

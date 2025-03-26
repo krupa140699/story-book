@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { NgApexchartsModule } from "ng-apexcharts";
 import {
   ApexAxisChartSeries,
@@ -21,7 +21,9 @@ import {
 })
 export class MonthlyExposureChartComponent implements OnInit,OnDestroy, AfterViewInit {
   chart: any;
-  constructor() { }
+  tooltipIndex: number | null = null;
+  constructor(private cdr: ChangeDetectorRef,
+    private renderer: Renderer2,private el: ElementRef) { }
   public chartSeries!: ApexAxisChartSeries;
   public chartOptions!: ApexChart;
   public xAxisOptions!: ApexXAxis;
@@ -84,6 +86,15 @@ export class MonthlyExposureChartComponent implements OnInit,OnDestroy, AfterVie
       toolbar: {
         show: false
       },
+      events: {
+        dataPointMouseEnter: (event, chartContext, config) => {
+          this.tooltipIndex = config.dataPointIndex;
+          this.showCustomTooltip(event, config);
+        },
+        dataPointMouseLeave: () => {
+          setTimeout(() => this.hideCustomTooltip(), 1500000000);
+        }
+      }
     } as ApexChart;
   
     this.xAxisOptions = {
@@ -154,5 +165,82 @@ export class MonthlyExposureChartComponent implements OnInit,OnDestroy, AfterVie
     this.fillOptions = {
       colors: ["#D92D20", "#DCEAF7", "#A2B0FB", "#2947F2"],
     };
+  }
+  showCustomTooltip(event: MouseEvent, config: any) {
+    let tooltip = document.getElementById('custom-tooltip');
+
+    if (tooltip) {
+      // const { seriesIndex, dataPointIndex } = config;
+      // const actualIndex = this.currentPage * this.pageSize + dataPointIndex;
+      // const data = this.chartSeries[seriesIndex].data[actualIndex];
+      // Adjust the tooltip content
+      this.renderer.setProperty(tooltip, 'innerHTML', `
+      <div class="inner-wrap">
+        <div class="head-title">January 2024</div>
+        <div class="item-wrap">
+          <div class="tooltip-item">
+            <div class="info-sec item-month">
+              <h4 class="title">Monthly exposure</h4>
+              <div class="amount"><span class="negative-value">-$10,000</span> / $100,000</div>
+              <div class="neg-text">Reverse exposure</div>
+            </div>
+            <button class="edit-button">Edit</button>
+          </div>
+          <div class="tooltip-item">
+            <div class="info-sec item-hedge">
+              <h4 class="title">Recommended hedge</h4>
+              <div class="amount">$60,000</div>
+            </div>
+          </div>
+          <div class="tooltip-item">
+            <div class="info-sec item-fund">
+              <h4 class="title">Hedged funds</h4>
+              <div class="amount">$0</div>
+            </div>
+            <button class="hedge-button">Hedge</button>
+          </div>
+        </div>
+      </div>
+    `);
+
+
+      if (!document.body.contains(tooltip)) {
+        this.renderer.appendChild(document.body, tooltip);
+      }
+      tooltip.style.left = `${event.pageX}px`;
+      tooltip.style.top = `${event.pageY / 2.5}px`;
+      tooltip.style.display = 'block';
+
+      this.cdr.detectChanges();
+
+      // tooltip.addEventListener('click', (e: Event) => {
+      //   const target = e.target as HTMLElement;
+      //   if (target.classList.contains('edit-button')) {
+      //     const index = target.getAttribute('data-index');
+      //     if (index !== null) {
+      //       this.editValue(parseInt(index, 10));
+      //     }
+      //   } else if (target.classList.contains('hedge-button')) {
+      //     this.router.navigate([localStorage.getItem('subSite') ? localStorage.getItem('subSite') + 'risk-manager/hedging-proposal' : '/risk-manager/hedging-proposal']);
+      //   }
+      // });
+    }
+  }
+  hideCustomTooltip() {
+    const tooltip = document.getElementById('custom-tooltip');
+    if (tooltip) {
+      tooltip.style.display = 'none';
+    }
+  }
+  @HostListener('document:mousemove', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const clickedInside = this.el.nativeElement.contains(event.target);
+    if (!clickedInside) {
+      this.hideCustomTooltip();
+    }
+  }
+  @HostListener('document:scroll', ['$event'])
+  onDocumentScroll(event: Event): void {
+    this.hideCustomTooltip();
   }
 }

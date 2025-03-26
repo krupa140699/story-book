@@ -4,8 +4,25 @@ import { AnnualExposureDetailsComponent } from "./annual-exposure-details.compon
 const meta: Meta<AnnualExposureDetailsComponent> = {
     title: 'Components/Risk-Manager/Annual-Exposure-Details',
     component: AnnualExposureDetailsComponent,
+    argTypes: {
+        annualExposure: { control: 'number', defaultValue: 1200001.2 },
+        recommendedHedge: { control: 'number', defaultValue: 720001 },
+        recommendedHedgePercent: { control: 'number', defaultValue: 60 },
+        currentHedge: { control: 'number', defaultValue: 0 },
+        currentHedgePercent: { control: 'number', defaultValue: 0 },
+        avgHedgeRate: { control: 'text', defaultValue: '--' }
+      }
 };
 export default meta;
 type Story = StoryObj<AnnualExposureDetailsComponent>;
 
-export const Default: Story = {};
+export const Default: Story = {
+    args: {
+        annualExposure: 1200001.2,
+        recommendedHedge: 720001,
+        recommendedHedgePercent: 60,
+        currentHedge: 0,
+        currentHedgePercent: 0,
+        avgHedgeRate: '--'
+      }
+};

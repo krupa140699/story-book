@@ -90,7 +90,7 @@
     "components": [
         {
             "name": "AnnualExposureDetailsComponent",
-            "id": "component-AnnualExposureDetailsComponent-fe7d8285777ffb42747391d7afe97c0909e7a62ed56e37ccd9e5e979945d15eda3967280cfc4e5257e50fb7bcf3a45094420a5ca48e65613e93e5d1e94bc3df1",
+            "id": "component-AnnualExposureDetailsComponent-a0d96da3947e355b3e4d77421d2324cf67b78e80298454c2358315897e7243192065dd21686ad19133dda2da8d638a93b56de09a2629fc27d2e358c8863027d1",
             "file": "src/app/risk-dashboard/components/dashboard/components/annual-exposure-details/annual-exposure-details.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -105,7 +105,62 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "annualExposure",
+                    "defaultValue": "1200001.2",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "avgHedgeRate",
+                    "defaultValue": "'--'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "currentHedge",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "currentHedgePercent",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "recommendedHedge",
+                    "defaultValue": "720001",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "recommendedHedgePercent",
+                    "defaultValue": "60",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -123,13 +178,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';\r\n@Component({\r\n  selector: 'app-annual-exposure-details',\r\n  imports: [NgbTooltipModule],\r\n  templateUrl: './annual-exposure-details.component.html',\r\n  styleUrl: './annual-exposure-details.component.scss'\r\n})\r\nexport class AnnualExposureDetailsComponent {\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';\r\n@Component({\r\n  selector: 'app-annual-exposure-details',\r\n  imports: [NgbTooltipModule],\r\n  templateUrl: './annual-exposure-details.component.html',\r\n  styleUrl: './annual-exposure-details.component.scss'\r\n})\r\nexport class AnnualExposureDetailsComponent {\r\n  @Input() annualExposure: number = 1200001.2;\r\n  @Input() recommendedHedge: number = 720001;\r\n  @Input() recommendedHedgePercent: number = 60;\r\n  @Input() currentHedge: number = 0;\r\n  @Input() currentHedgePercent: number = 0;\r\n  @Input() avgHedgeRate: string = '--';\r\n}\r\n",
             "styleUrl": "./annual-exposure-details.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"annual-exposer-details\">\r\n    <h4 class=\"info-title\"><img src=\"images/exposure-virtual.svg\" alt=\"exposure\" />Annual exposure details</h4>\r\n    <div class=\"annual-wrap\">\r\n        <div class=\"annual-item exposer-item\">\r\n            <h4 class=\"item-title\">Annual exposure<img src=\"images/annual-title-help-icon.svg\" alt=\"help\" [ngbTooltip]=\"annualExposer\" placement=\"top-left\"\r\n                tooltipClass=\"risk-step3-tooltip--rm\"></h4>\r\n            <div class=\"price-sec\">\r\n                <span class=\"sign\">$</span>1,200,001<span>.2</span>\r\n                <!-- Static content used as a placeholder -->\r\n            </div>\r\n        </div>\r\n        <ng-template #annualExposer>\r\n            The total amount at risk over the specified time period, calculated as the sum of all\r\n            monthly exposures\r\n        </ng-template>\r\n        <ng-template #avgHedge>\r\n            The average exchange rate of your current hedging transactions\r\n        </ng-template>\r\n\r\n        <div class=\"hedge-item annual-item\">\r\n            <h4 class=\"item-title\">Our recommended hedge</h4>\r\n            <div class=\"price-sec\">\r\n                <span class=\"sign\">$</span>720,001\r\n                <span class=\"percent-tag\">60%</span>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"current-hedge-item annual-item\">\r\n            <h4 class=\"item-title\">Your current hedge</h4>\r\n            <div class=\"price-sec\">\r\n                <span class=\"sign\">$</span>0\r\n                <span class=\"percent-tag\">0%</span>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"avg-hedge-item annual-item\">\r\n            <h4 class=\"item-title\">AVG hedging rate<img src=\"images/annual-title-help-icon.svg\" alt=\"help\" [ngbTooltip]=\"avgHedge\" placement=\"top-right\" tooltipClass=\"risk-step3-tooltip--rm\"></h4>\r\n            <div class=\"price-sec\">\r\n                --\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"annual-exposer-details\">\r\n    <h4 class=\"info-title\"><img src=\"images/exposure-virtual.svg\" alt=\"exposure\" />Annual exposure details</h4>\r\n    <div class=\"annual-wrap\">\r\n        <div class=\"annual-item exposer-item\">\r\n            <h4 class=\"item-title\">Annual exposure<img src=\"images/annual-title-help-icon.svg\" alt=\"help\" [ngbTooltip]=\"annualExposer\" placement=\"top-left\"\r\n                tooltipClass=\"risk-step3-tooltip--rm\"></h4>\r\n            <div class=\"price-sec\">\r\n                <span class=\"sign\">$</span>{{annualExposure}}\r\n                <!-- Static content used as a placeholder -->\r\n            </div>\r\n        </div>\r\n        <ng-template #annualExposer>\r\n            The total amount at risk over the specified time period, calculated as the sum of all\r\n            monthly exposures\r\n        </ng-template>\r\n        <ng-template #avgHedge>\r\n            The average exchange rate of your current hedging transactions\r\n        </ng-template>\r\n\r\n        <div class=\"hedge-item annual-item\">\r\n            <h4 class=\"item-title\">Our recommended hedge</h4>\r\n            <div class=\"price-sec\">\r\n                <span class=\"sign\">$</span>{{recommendedHedge}}\r\n                <span class=\"percent-tag\">{{recommendedHedgePercent}}%</span>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"current-hedge-item annual-item\">\r\n            <h4 class=\"item-title\">Your current hedge</h4>\r\n            <div class=\"price-sec\">\r\n                <span class=\"sign\">$</span>{{currentHedge}}\r\n                <span class=\"percent-tag\">{{currentHedgePercent}}%</span>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"avg-hedge-item annual-item\">\r\n            <h4 class=\"item-title\">AVG hedging rate<img src=\"images/annual-title-help-icon.svg\" alt=\"help\" [ngbTooltip]=\"avgHedge\" placement=\"top-right\" tooltipClass=\"risk-step3-tooltip--rm\"></h4>\r\n            <div class=\"price-sec\">\r\n                {{avgHedgeRate}}\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "AppComponent",
@@ -230,7 +285,7 @@
         },
         {
             "name": "BreadcrumbWalletComponent",
-            "id": "component-BreadcrumbWalletComponent-bed885fcd89ee7f5db98dd6ab4b7c6036b33e69c3a99ce63f29b1cb5c13fa455d2117e2eb497045a5d484f9bee0f1550357efad6c03cbd12cbf37cbb58014cd2",
+            "id": "component-BreadcrumbWalletComponent-a7daf20243617368d33633db183f6c5e4aa6365ba9481cf445542aa764891adf8d550d47f3e5b337d488156fc20aacdcd3d15846c06284aef6363c8c16e1559c",
             "file": "src/app/risk-dashboard/components/dashboard/components/breadcrumb-wallet/breadcrumb-wallet.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -245,7 +300,44 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "baseCurrency",
+                    "defaultValue": "'images/ils-flag.svg'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "cashFlowName",
+                    "defaultValue": "'S.L ROBOTICS'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "fromCurrency",
+                    "defaultValue": "'flags/us.svg'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "monthRange",
+                    "defaultValue": "'Jan 24 - Dec 24'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -258,13 +350,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-breadcrumb-wallet',\r\n  imports: [],\r\n  templateUrl: './breadcrumb-wallet.component.html',\r\n  styleUrl: './breadcrumb-wallet.component.scss'\r\n})\r\nexport class BreadcrumbWalletComponent {\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-breadcrumb-wallet',\r\n  imports: [],\r\n  templateUrl: './breadcrumb-wallet.component.html',\r\n  styleUrl: './breadcrumb-wallet.component.scss'\r\n})\r\nexport class BreadcrumbWalletComponent {\r\n  @Input() baseCurrency: string = 'images/ils-flag.svg';\r\n  @Input() fromCurrency: string = 'flags/us.svg';\r\n  @Input() cashFlowName: string = 'S.L ROBOTICS';\r\n  @Input() monthRange: string = 'Jan 24 - Dec 24';\r\n}\r\n",
             "styleUrl": "./breadcrumb-wallet.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"risk-header\">\r\n    <div class=\"risk-nav\">\r\n        Dashboard / hedging / <b>risk analysis</b>\r\n    </div>\r\n    <div class=\"risk-header-bottom\">\r\n        <div class=\"left-sec\">\r\n            <button class=\"cash-flow-wrap\" tooltip=\"S.L ROBOTICS\" placement=\"auto\" tooltipClass=\"risk-dash-tooltip--rm1\" container=\"body\">\r\n                <div class=\"currency-pair\">\r\n                    <img src=\"flags/us.svg\" class=\"from-currency\">\r\n                    <div class=\"base-currency-wrap\">\r\n                        <img src=\"images/ils-flag.svg\" class=\"base-currency\">\r\n                    </div>\r\n                </div>\r\n                <div class=\"cashflow-details\">\r\n                    <!-- Static content -->\r\n                    <h3 class=\"name\">S.L ROBOTICS</h3>\r\n                    <h5 class=\"month-range-text\">\r\n                        Jan 24 - Dec 24\r\n                    </h5>\r\n                </div>\r\n                <div class=\"selection-icons\">\r\n                    <!-- Add icons or leave it empty -->\r\n                </div>\r\n            </button>\r\n            <button class=\"add-flow\"><i class=\"fas fa-plus\"></i></button>\r\n        </div>\r\n        <div class=\"right-buttons\">\r\n            <!-- Static content for buttons -->\r\n            <button class=\"policy-btn\">\r\n                <img src=\"images/plus-icon-round.svg\"> Advanced Policy\r\n                <span class=\"notify-tag\"></span>\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"risk-header\">\r\n    <div class=\"risk-nav\">\r\n        Dashboard / hedging / <b>risk analysis</b>\r\n    </div>\r\n    <div class=\"risk-header-bottom\">\r\n        <div class=\"left-sec\">\r\n            <button class=\"cash-flow-wrap\" tooltip=\"S.L ROBOTICS\" placement=\"auto\" tooltipClass=\"risk-dash-tooltip--rm1\" container=\"body\">\r\n                <div class=\"currency-pair\">\r\n                    <img [src]=\"fromCurrency\" class=\"from-currency\">\r\n                    <div class=\"base-currency-wrap\">\r\n                        <img [src]=\"baseCurrency\" class=\"base-currency\">\r\n                    </div>\r\n                </div>\r\n                <div class=\"cashflow-details\">\r\n                    <!-- Static content -->\r\n                    <h3 class=\"name\">{{cashFlowName}}</h3>\r\n                    <h5 class=\"month-range-text\">\r\n                        {{monthRange}}\r\n                    </h5>\r\n                </div>\r\n                <div class=\"selection-icons\">\r\n                    <!-- Add icons or leave it empty -->\r\n                </div>\r\n            </button>\r\n            <button class=\"add-flow\"><i class=\"fas fa-plus\"></i></button>\r\n        </div>\r\n        <div class=\"right-buttons\">\r\n            <!-- Static content for buttons -->\r\n            <button class=\"policy-btn\">\r\n                <img src=\"images/plus-icon-round.svg\"> Advanced Policy\r\n                <span class=\"notify-tag\"></span>\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -1326,7 +1418,7 @@
         },
         {
             "name": "MonthlyExposureChartComponent",
-            "id": "component-MonthlyExposureChartComponent-3190698ce237665ec33326502ea8a7ad65a7972fa27c7e87e4b4541530f1d63a9f8f63837d7975c081ac7fd4ba30e4330c6b8bbf96c581d9466fa4dec445cd78",
+            "id": "component-MonthlyExposureChartComponent-bc2b4b1cedc20674b25432c09553154bcb965fc18ae4d08bfd4c95c08296f3c2ece7ac96170b25dbd81d2544f7185fd849825350e6111a9a26f996db6ce37633",
             "file": "src/app/risk-dashboard/components/dashboard/components/monthly-exposure-chart/monthly-exposure-chart.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1362,7 +1454,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 26,
+                    "line": 28,
                     "modifierKind": [
                         125
                     ]
@@ -1375,7 +1467,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 25,
+                    "line": 27,
                     "modifierKind": [
                         125
                     ]
@@ -1389,7 +1481,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 36
+                    "line": 38
                 },
                 {
                     "name": "currentPage",
@@ -1400,7 +1492,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 38
+                    "line": 40
                 },
                 {
                     "name": "dataLabelsOptions",
@@ -1410,7 +1502,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 30,
+                    "line": 32,
                     "modifierKind": [
                         125
                     ]
@@ -1423,7 +1515,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 34,
+                    "line": 36,
                     "modifierKind": [
                         125
                     ]
@@ -1436,7 +1528,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 31,
+                    "line": 33,
                     "modifierKind": [
                         125
                     ]
@@ -1450,7 +1542,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 37
+                    "line": 39
                 },
                 {
                     "name": "plotOptions",
@@ -1460,7 +1552,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 33,
+                    "line": 35,
                     "modifierKind": [
                         125
                     ]
@@ -1473,10 +1565,21 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 29,
+                    "line": 31,
                     "modifierKind": [
                         125
                     ]
+                },
+                {
+                    "name": "tooltipIndex",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
                 },
                 {
                     "name": "tooltipOptions",
@@ -1486,7 +1589,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 32,
+                    "line": 34,
                     "modifierKind": [
                         125
                     ]
@@ -1499,7 +1602,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 27,
+                    "line": 29,
                     "modifierKind": [
                         125
                     ]
@@ -1512,7 +1615,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 28,
+                    "line": 30,
                     "modifierKind": [
                         125
                     ]
@@ -1525,7 +1628,17 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 79,
+                    "line": 81,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "hideCustomTooltip",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 229,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1535,7 +1648,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 67,
+                    "line": 69,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1545,7 +1658,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 73,
+                    "line": 75,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1555,15 +1668,167 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 39,
+                    "line": 41,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "onDocumentClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 236,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'document:mousemove', ['$event']"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onDocumentScroll",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 243,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'document:scroll', ['$event']"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "showCustomTooltip",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "config",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 169,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "config",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "document:mousemove",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 236
+                },
+                {
+                    "name": "document:scroll",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 243
+                }
+            ],
             "standalone": false,
             "imports": [
                 {
@@ -1578,7 +1843,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';\r\nimport { NgApexchartsModule } from \"ng-apexcharts\";\r\nimport {\r\n  ApexAxisChartSeries,\r\n  ApexChart,\r\n  ApexXAxis,\r\n  ApexYAxis,\r\n  ApexStroke,\r\n  ApexDataLabels,\r\n  ApexLegend,\r\n  ApexTooltip,\r\n  ApexPlotOptions,\r\n  ApexFill\r\n} from 'ng-apexcharts';\r\n@Component({\r\n  selector: 'app-monthly-exposure-chart',\r\n  imports: [NgApexchartsModule,CommonModule],\r\n  templateUrl: './monthly-exposure-chart.component.html',\r\n  styleUrl: './monthly-exposure-chart.component.scss'\r\n})\r\nexport class MonthlyExposureChartComponent implements OnInit,OnDestroy, AfterViewInit {\r\n  chart: any;\r\n  constructor() { }\r\n  public chartSeries!: ApexAxisChartSeries;\r\n  public chartOptions!: ApexChart;\r\n  public xAxisOptions!: ApexXAxis;\r\n  public yAxisOptions!: ApexYAxis;\r\n  public strokeOptions!: ApexStroke;\r\n  public dataLabelsOptions!: ApexDataLabels;\r\n  public legendOptions!: ApexLegend;\r\n  public tooltipOptions!: ApexTooltip;\r\n  public plotOptions!: ApexPlotOptions;\r\n  public fillOptions!: ApexFill;\r\n\r\n  columnIndex: any = [];\r\n  pageSize = 12;\r\n  currentPage = 0;\r\n  ngOnInit() {\r\n    this.chartSeries = [\r\n      {\r\n        name: \"Exposure-negative\",\r\n        type: \"bar\",\r\n        group: \"exposer\",\r\n        data: [0,0,50000,0,0,0,0,0,0,0,0,0]\r\n      },\r\n      {\r\n        name: \"Exposure\",\r\n        type: \"bar\",\r\n        group: \"exposer\",\r\n        data: [95000,95000,45000,95000,95000,95000,95000,95000,95000,95000,95000,95000]\r\n      },\r\n      {\r\n        name: \"Recommended hedging\",\r\n        type: \"bar\",\r\n        group: \"rechedge\",\r\n        data: [60000,60000,60000,60000,60000,60000,60000,60000,60000,60000,60000,60000]\r\n      },\r\n      {\r\n        name: \"Actual hedging\",\r\n        type: \"bar\",\r\n        group: \"acthedge\",\r\n        data: [1000,1000,1000,20000,1000,1000,1000,1000,1000,1000,1000,1000]\r\n      }\r\n    ];\r\n  }\r\n  ngAfterViewInit() {\r\n    // Use setTimeout to allow Angular to render the chart correctly\r\n    setTimeout(() => {\r\n      this.getChartOptions();\r\n    }, 100);\r\n  }\r\n  ngOnDestroy() {\r\n    // Destroy the chart to prevent memory leaks\r\n    if (this.chart) {\r\n      this.chart.destroy();\r\n    }\r\n  }\r\n  getChartOptions() {\r\n    this.chartOptions = {\r\n      type: \"bar\",\r\n      height: 319,\r\n      stacked: true,\r\n      toolbar: {\r\n        show: false\r\n      },\r\n    } as ApexChart;\r\n  \r\n    this.xAxisOptions = {\r\n      categories: ['Jan 24','Feb 24','Mar 24','Apr 24','May 24','Jun 24','Jul 24','Aug 24','Sep 24','Oct 24','Nov 24','Dec 24'],\r\n      labels: {\r\n        style: {\r\n          colors: '#98A2B3',\r\n          fontSize: '12px',\r\n          fontFamily: 'Inter'\r\n        },\r\n        rotate: -45,\r\n        hideOverlappingLabels: false,\r\n      },\r\n    };\r\n  \r\n    this.yAxisOptions = {\r\n      min: 0,\r\n      max: 100000, // Round off the value\r\n      tickAmount: 5,\r\n      labels: {\r\n        formatter: function(val) {\r\n          return \"$\" + val;\r\n        },\r\n        style: {\r\n          colors: 'rgba(0, 0, 0, 0.70)',\r\n          fontSize: '12px',\r\n          fontFamily: 'Inter'\r\n        }\r\n      }\r\n    };\r\n  \r\n  \r\n    this.strokeOptions = {\r\n      width: 0,\r\n      curve: \"smooth\"\r\n    };\r\n  \r\n    this.dataLabelsOptions = {\r\n      enabled: false\r\n    };\r\n  \r\n    this.legendOptions = {\r\n      show: true,\r\n      position: \"top\",\r\n      markers: {\r\n        offsetX: 0,\r\n        offsetY: 0,\r\n        fillColors: [\"#D92D20\", \"#DCEAF7\", \"#A2B0FB\", \"#2947F2\"],\r\n        strokeWidth: 2\r\n      },\r\n      itemMargin: {\r\n        horizontal: 10,\r\n        vertical: 0\r\n      }\r\n    };\r\n  \r\n    this.tooltipOptions = {\r\n      enabled: false, // Disable default tooltips\r\n    };\r\n  \r\n    this.plotOptions = {\r\n      bar: {\r\n        horizontal: false,\r\n        columnWidth: '35px',\r\n      }\r\n    };\r\n  \r\n    this.fillOptions = {\r\n      colors: [\"#D92D20\", \"#DCEAF7\", \"#A2B0FB\", \"#2947F2\"],\r\n    };\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnDestroy, OnInit, Renderer2 } from '@angular/core';\r\nimport { NgApexchartsModule } from \"ng-apexcharts\";\r\nimport {\r\n  ApexAxisChartSeries,\r\n  ApexChart,\r\n  ApexXAxis,\r\n  ApexYAxis,\r\n  ApexStroke,\r\n  ApexDataLabels,\r\n  ApexLegend,\r\n  ApexTooltip,\r\n  ApexPlotOptions,\r\n  ApexFill\r\n} from 'ng-apexcharts';\r\n@Component({\r\n  selector: 'app-monthly-exposure-chart',\r\n  imports: [NgApexchartsModule,CommonModule],\r\n  templateUrl: './monthly-exposure-chart.component.html',\r\n  styleUrl: './monthly-exposure-chart.component.scss'\r\n})\r\nexport class MonthlyExposureChartComponent implements OnInit,OnDestroy, AfterViewInit {\r\n  chart: any;\r\n  tooltipIndex: number | null = null;\r\n  constructor(private cdr: ChangeDetectorRef,\r\n    private renderer: Renderer2,private el: ElementRef) { }\r\n  public chartSeries!: ApexAxisChartSeries;\r\n  public chartOptions!: ApexChart;\r\n  public xAxisOptions!: ApexXAxis;\r\n  public yAxisOptions!: ApexYAxis;\r\n  public strokeOptions!: ApexStroke;\r\n  public dataLabelsOptions!: ApexDataLabels;\r\n  public legendOptions!: ApexLegend;\r\n  public tooltipOptions!: ApexTooltip;\r\n  public plotOptions!: ApexPlotOptions;\r\n  public fillOptions!: ApexFill;\r\n\r\n  columnIndex: any = [];\r\n  pageSize = 12;\r\n  currentPage = 0;\r\n  ngOnInit() {\r\n    this.chartSeries = [\r\n      {\r\n        name: \"Exposure-negative\",\r\n        type: \"bar\",\r\n        group: \"exposer\",\r\n        data: [0,0,50000,0,0,0,0,0,0,0,0,0]\r\n      },\r\n      {\r\n        name: \"Exposure\",\r\n        type: \"bar\",\r\n        group: \"exposer\",\r\n        data: [95000,95000,45000,95000,95000,95000,95000,95000,95000,95000,95000,95000]\r\n      },\r\n      {\r\n        name: \"Recommended hedging\",\r\n        type: \"bar\",\r\n        group: \"rechedge\",\r\n        data: [60000,60000,60000,60000,60000,60000,60000,60000,60000,60000,60000,60000]\r\n      },\r\n      {\r\n        name: \"Actual hedging\",\r\n        type: \"bar\",\r\n        group: \"acthedge\",\r\n        data: [1000,1000,1000,20000,1000,1000,1000,1000,1000,1000,1000,1000]\r\n      }\r\n    ];\r\n  }\r\n  ngAfterViewInit() {\r\n    // Use setTimeout to allow Angular to render the chart correctly\r\n    setTimeout(() => {\r\n      this.getChartOptions();\r\n    }, 100);\r\n  }\r\n  ngOnDestroy() {\r\n    // Destroy the chart to prevent memory leaks\r\n    if (this.chart) {\r\n      this.chart.destroy();\r\n    }\r\n  }\r\n  getChartOptions() {\r\n    this.chartOptions = {\r\n      type: \"bar\",\r\n      height: 319,\r\n      stacked: true,\r\n      toolbar: {\r\n        show: false\r\n      },\r\n      events: {\r\n        dataPointMouseEnter: (event, chartContext, config) => {\r\n          this.tooltipIndex = config.dataPointIndex;\r\n          this.showCustomTooltip(event, config);\r\n        },\r\n        dataPointMouseLeave: () => {\r\n          setTimeout(() => this.hideCustomTooltip(), 1500000000);\r\n        }\r\n      }\r\n    } as ApexChart;\r\n  \r\n    this.xAxisOptions = {\r\n      categories: ['Jan 24','Feb 24','Mar 24','Apr 24','May 24','Jun 24','Jul 24','Aug 24','Sep 24','Oct 24','Nov 24','Dec 24'],\r\n      labels: {\r\n        style: {\r\n          colors: '#98A2B3',\r\n          fontSize: '12px',\r\n          fontFamily: 'Inter'\r\n        },\r\n        rotate: -45,\r\n        hideOverlappingLabels: false,\r\n      },\r\n    };\r\n  \r\n    this.yAxisOptions = {\r\n      min: 0,\r\n      max: 100000, // Round off the value\r\n      tickAmount: 5,\r\n      labels: {\r\n        formatter: function(val) {\r\n          return \"$\" + val;\r\n        },\r\n        style: {\r\n          colors: 'rgba(0, 0, 0, 0.70)',\r\n          fontSize: '12px',\r\n          fontFamily: 'Inter'\r\n        }\r\n      }\r\n    };\r\n  \r\n  \r\n    this.strokeOptions = {\r\n      width: 0,\r\n      curve: \"smooth\"\r\n    };\r\n  \r\n    this.dataLabelsOptions = {\r\n      enabled: false\r\n    };\r\n  \r\n    this.legendOptions = {\r\n      show: true,\r\n      position: \"top\",\r\n      markers: {\r\n        offsetX: 0,\r\n        offsetY: 0,\r\n        fillColors: [\"#D92D20\", \"#DCEAF7\", \"#A2B0FB\", \"#2947F2\"],\r\n        strokeWidth: 2\r\n      },\r\n      itemMargin: {\r\n        horizontal: 10,\r\n        vertical: 0\r\n      }\r\n    };\r\n  \r\n    this.tooltipOptions = {\r\n      enabled: false, // Disable default tooltips\r\n    };\r\n  \r\n    this.plotOptions = {\r\n      bar: {\r\n        horizontal: false,\r\n        columnWidth: '35px',\r\n      }\r\n    };\r\n  \r\n    this.fillOptions = {\r\n      colors: [\"#D92D20\", \"#DCEAF7\", \"#A2B0FB\", \"#2947F2\"],\r\n    };\r\n  }\r\n  showCustomTooltip(event: MouseEvent, config: any) {\r\n    let tooltip = document.getElementById('custom-tooltip');\r\n\r\n    if (tooltip) {\r\n      // const { seriesIndex, dataPointIndex } = config;\r\n      // const actualIndex = this.currentPage * this.pageSize + dataPointIndex;\r\n      // const data = this.chartSeries[seriesIndex].data[actualIndex];\r\n      // Adjust the tooltip content\r\n      this.renderer.setProperty(tooltip, 'innerHTML', `\r\n      <div class=\"inner-wrap\">\r\n        <div class=\"head-title\">January 2024</div>\r\n        <div class=\"item-wrap\">\r\n          <div class=\"tooltip-item\">\r\n            <div class=\"info-sec item-month\">\r\n              <h4 class=\"title\">Monthly exposure</h4>\r\n              <div class=\"amount\"><span class=\"negative-value\">-$10,000</span> / $100,000</div>\r\n              <div class=\"neg-text\">Reverse exposure</div>\r\n            </div>\r\n            <button class=\"edit-button\">Edit</button>\r\n          </div>\r\n          <div class=\"tooltip-item\">\r\n            <div class=\"info-sec item-hedge\">\r\n              <h4 class=\"title\">Recommended hedge</h4>\r\n              <div class=\"amount\">$60,000</div>\r\n            </div>\r\n          </div>\r\n          <div class=\"tooltip-item\">\r\n            <div class=\"info-sec item-fund\">\r\n              <h4 class=\"title\">Hedged funds</h4>\r\n              <div class=\"amount\">$0</div>\r\n            </div>\r\n            <button class=\"hedge-button\">Hedge</button>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    `);\r\n\r\n\r\n      if (!document.body.contains(tooltip)) {\r\n        this.renderer.appendChild(document.body, tooltip);\r\n      }\r\n      tooltip.style.left = `${event.pageX}px`;\r\n      tooltip.style.top = `${event.pageY / 2.5}px`;\r\n      tooltip.style.display = 'block';\r\n\r\n      this.cdr.detectChanges();\r\n\r\n      // tooltip.addEventListener('click', (e: Event) => {\r\n      //   const target = e.target as HTMLElement;\r\n      //   if (target.classList.contains('edit-button')) {\r\n      //     const index = target.getAttribute('data-index');\r\n      //     if (index !== null) {\r\n      //       this.editValue(parseInt(index, 10));\r\n      //     }\r\n      //   } else if (target.classList.contains('hedge-button')) {\r\n      //     this.router.navigate([localStorage.getItem('subSite') ? localStorage.getItem('subSite') + 'risk-manager/hedging-proposal' : '/risk-manager/hedging-proposal']);\r\n      //   }\r\n      // });\r\n    }\r\n  }\r\n  hideCustomTooltip() {\r\n    const tooltip = document.getElementById('custom-tooltip');\r\n    if (tooltip) {\r\n      tooltip.style.display = 'none';\r\n    }\r\n  }\r\n  @HostListener('document:mousemove', ['$event'])\r\n  onDocumentClick(event: MouseEvent): void {\r\n    const clickedInside = this.el.nativeElement.contains(event.target);\r\n    if (!clickedInside) {\r\n      this.hideCustomTooltip();\r\n    }\r\n  }\r\n  @HostListener('document:scroll', ['$event'])\r\n  onDocumentScroll(event: Event): void {\r\n    this.hideCustomTooltip();\r\n  }\r\n}\r\n",
             "styleUrl": "./monthly-exposure-chart.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1588,8 +1853,56 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [],
-                "line": 23
+                "args": [
+                    {
+                        "name": "cdr",
+                        "type": "ChangeDetectorRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 24,
+                "jsdoctags": [
+                    {
+                        "name": "cdr",
+                        "type": "ChangeDetectorRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "el",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "extends": [],
             "implements": [
@@ -2004,7 +2317,7 @@
                 "linktype": "component",
                 "name": "AnnualExposureDetailsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -2013,7 +2326,7 @@
                 "linktype": "component",
                 "name": "BreadcrumbWalletComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -2031,7 +2344,7 @@
                 "linktype": "component",
                 "name": "MonthlyExposureChartComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/20",
+                "coverageCount": "0/27",
                 "status": "low"
             },
             {
