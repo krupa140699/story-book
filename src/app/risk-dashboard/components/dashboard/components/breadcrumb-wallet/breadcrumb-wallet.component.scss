@@ -177,6 +177,7 @@
                     position: relative;
                     min-height: 44px;
                     transition: all 0.5s ease;
+                    cursor: pointer;
 
                     img {
                         width: 13px;
@@ -211,6 +212,7 @@
                     position: relative;
                     min-height: 44px;
                     transition: all 0.5s ease;
+                    cursor: pointer;
 
                     img {
                         width: 15px;
@@ -265,6 +267,100 @@
 
                     &:hover {
                         opacity: 0.9;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width:1024px) {
+        .risk-header{
+            .risk-header-bottom {
+                margin: 10px 0 20px;
+            }
+        }
+    }
+    @media screen and (max-width:991px) {
+        .risk-header{
+            .risk-nav {
+                position: relative;
+                top:6px;
+            }
+            .risk-header-bottom {
+                // display: block;
+                .right-buttons{
+                    margin: 10px 0 0;
+                    justify-content: flex-end;
+                    .report-btn{
+                        min-height: 40px;
+                        padding: 9px 15px;
+                        font-size: 12px;
+                        gap: 5px;
+                    }
+                    .policy-btn,.hedge-btn{
+                        margin: 0 0 0 5px;
+                        min-height: 40px;
+                        padding: 9px 15px;
+                        font-size: 12px;
+                        gap: 5px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width:767px) {
+        .risk-header{
+            .risk-header-bottom {
+                // display: block;
+                margin: 20px 0;
+                flex-wrap: wrap;
+                .left-sec {
+                    .cash-flow-wrap {
+                        min-width: max-content;
+                        height: 54px;
+                        gap: 10px;
+                        .currency-pair {
+                            img.from-currency {
+                                width:28px;
+                            }
+                        }
+                    }
+                }
+                .right-buttons{
+                    margin:20px 0 0;
+                    justify-content: flex-end;
+                    .report-btn{
+                        min-height:38px;
+                        padding: 9px 8px;
+                    }
+                    .policy-btn,.hedge-btn{
+                        margin: 0 0 0 5px;
+                        min-height:38px;
+                        padding: 9px 8px;
+                        .notify-tag{
+                            width: 8px;
+                            height: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width:420px) {
+        .risk-header{
+            .risk-header-bottom {
+                .right-buttons{
+                    display: block;
+                    .report-btn{
+                        margin: 0 0 5px 5px;
+                        display: inline-block;
+                        padding: 4px 10px;
+                        min-height: 30px;
+                    }
+                    .policy-btn,.hedge-btn{
+                        margin: 0 0 5px 5px;
+                        display: inline-block;
+                        padding: 4px 10px;
+                        min-height: 30px;
                     }
                 }
             }

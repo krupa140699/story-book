@@ -1,5 +1,4 @@
 @import "../assets/scss/variable";
-
 .layout {
     padding: 117px 0 0 240px;
     display: flex;
@@ -22,12 +21,15 @@
         }
     }
     @media screen and (max-width:1440px) {
-        padding:89px 0 0 124px;
+        padding:93px 0 0 124px;
     }
     @media screen and (max-width:1024px) {
-        padding:89px 0 0 200px;
+        padding:87px 0 0 200px;
+    }
+    @media screen and (max-width:930px) {
+        padding:118px 0 0 200px;
     }
     @media screen and (max-width:767px) {
-        padding:111px 0 0 0;
+        padding:100px 0 0 0;
     }
 }

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/angular";
 import { DashboardComponent } from "./dashboard.component";
 
 const meta: Meta<DashboardComponent> = {
-    title: 'Components/Dashboard',
+    title: 'Components/Risk-Manager/Dashboard',
     component: DashboardComponent,
 };
 export default meta;

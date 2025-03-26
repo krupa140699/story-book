@@ -48,7 +48,7 @@
 
   .side-bar-wrapper {
     padding: 72px 0 23px 29px;
-    height: calc(100vh - 72px);
+    height: 100vh;
     overflow-y: auto;
 
     .logo {
@@ -88,11 +88,12 @@
       .menu-item {
         display: flex;
         align-items: center;
-        width: auto;
+        width: fit-content;
         gap: 0;
         padding: 12px 7px 12px 10px;
         border-radius: 7px;
         margin: 0 0 16px;
+        min-width:186px;
         cursor: pointer;
 
         i {
@@ -276,6 +277,8 @@
           border-radius: 7px;
           margin: 0 0 16px;
           height: auto;
+          width: fit-content;
+          min-width: 186px;
 
           .mat-expansion-panel-header-title {
             i {
@@ -467,7 +470,7 @@
 
       .side-bar-wrapper {
         padding: 60px 0 23px 29px;
-        height: calc(100vh - 60px);
+        height:100vh;
 
         .logo {
           .small-logo {
@@ -487,6 +490,7 @@
           .menu-item {
             width: fit-content;
             padding: 16px;
+            min-width: fit-content;
 
             i {
               margin: 0;
@@ -502,7 +506,7 @@
             .header-reports {
               padding: 16px;
               width: fit-content;
-
+              min-width:fit-content;
               .mat-expansion-panel-header-title {
                 margin: 0;
 

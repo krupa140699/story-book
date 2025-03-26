@@ -73,6 +73,7 @@ header {
                 border-bottom: 1px dashed #A4A4A4;
                 align-items: center;
                 margin: 0 0 0 45px;
+                width: 100%;
 
                 .nav-left {
                     .wallet-list-business {
@@ -295,10 +296,10 @@ header {
             }
 
             .main-nav {
-                padding: 0 40px 0 17px;
+                padding: 0 17px;
 
                 .nav-inner {
-                    padding: 15px 0;
+                    padding:0 0 15px;
                     margin: 0;
                     .nav-left {
                         .wallet-list-business {
